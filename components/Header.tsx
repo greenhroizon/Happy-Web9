@@ -19,8 +19,8 @@ export default function Header() {
             <div className="col-span-2 md:flex md:gap-4 lg:gap-10 items-center justify-center hidden md:text-sm text-2xl">
               <div className="cursor-pointer"><Link href={"/AboutUs"}>About US</Link></div>
               <div className="cursor-pointer"><Link href={"/Programs"}>Programs</Link></div>
-              <div>Corporate</div>
-              <div>Blog</div>
+                <div className="cursor-pointer"><Link href={"/Corporate"}>Corporate</Link></div>
+                  <div className="cursor-pointer"><Link href={"/Blog"}>Blog</Link></div>
             </div>
            <div className="ml-auto">
               <Button className="bg-[#3f5c4a] hover:bg-[#162d22] cursor-pointer rounded-4xl text-base px-4 lg:px-8 py-6">

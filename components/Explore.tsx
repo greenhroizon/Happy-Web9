@@ -70,10 +70,10 @@ export default function Explore() {
               key={program.title}
               variants={fadeUp}
               whileTap={{ scale: 0.97 }}
-              className="w-full md:w-fit"
+              className="w-full"
             >
               <Card
-                className={`w-full md:w-65 md:h-65 rounded-2xl border p-4 flex flex-col items-center justify-center text-center transition-all duration-300 ${
+                className={`w-full md:h-65 rounded-2xl border p-4 flex flex-col items-center justify-center text-center transition-all duration-300 ${
                   program.dark
                     ? "bg-[#3d3020] text-white border-transparent"
                     : "bg-[#f3efe8] border-[#3d3020]"
