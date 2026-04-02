@@ -14,8 +14,7 @@ export default function AboutUs(){
         <Growth/>
         <Happy/>
         <Guides/>
-        {/* <Step/> */}
-        <Footer/>
+        <Step/>
         </>
     );
 }
