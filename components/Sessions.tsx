@@ -71,17 +71,15 @@ export default function Sessions() {
           <Button className="px-20 py-6 rounded-full bg-[#544120] text-white border-2 border-yellow-400">
             All Programs
           </Button>
-          <Button className="hidden xl:block text-center text-lg py-6 px-10 rounded-full bg-[#f3efe8] text-[#c39e86] border-2 border-[#544120]">
-            <span className="flex flex-row gap-10 whitespace-nowrap">
-              <span>Leadership</span>
-              <span>|</span>
-              <span>Employee Wellness</span>
-              <span>|</span>
-              <span>HR Programs</span>
-              <span>|</span>
-              <span>Sales Teams</span>
-            </span>
-          </Button>
+          <Button className="hidden xl:flex items-center justify-center text-lg py-6 px-10 rounded-full bg-[#f3efe8] text-[#c39e86] border-2 border-[#544120] gap-4 whitespace-nowrap">
+  <span>Leadership</span>
+  <span>|</span>
+  <span>Employee Wellness</span>
+  <span>|</span>
+  <span>HR Programs</span>
+  <span>|</span>
+  <span>Sales Teams</span>
+</Button>
         </motion.div>
       </div>
     </motion.div>
