@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function FooterSmall() {
   // ================= Animations =================
@@ -39,7 +40,7 @@ export default function FooterSmall() {
       <div className="flex flex-col gap-6 flex-1">
         {/* About */}
         <motion.div className="flex flex-col gap-2" variants={fadeUp}>
-          <strong className="text-[#544120] text-sm">About</strong>
+          <strong className="text-[#544120] text-sm"><Link href="/AboutUs" className="cursor-pointer">About</Link></strong>
           <div className="flex flex-col text-[#544120] text-[13px]">
             <span>Founder's Note</span>
             <span>Meet Our Guides</span>
@@ -48,11 +49,11 @@ export default function FooterSmall() {
 
         {/* Our Programs */}
         <motion.div className="flex flex-col gap-2" variants={fadeUp}>
-          <strong className="text-[#544120] text-sm">Our Programs</strong>
+          <strong className="text-[#544120] text-sm"><Link href="/Programs" className="cursor-pointer">Our Programs </Link></strong>
           <div className="flex flex-col text-[#544120] text-[13px]">
-            <span>For Individuals</span>
-            <span>For Organizations</span>
-            <span>Signature Programs</span>
+              <span>For Individuals</span>
+              <span><Link href="/AboutUs" className="cursor-pointer">For Organizations</Link></span>
+              <span><Link href="/Programs" className="cursor-pointer">Signature Programs </Link></span>
             <div className="flex flex-col pl-4 text-[10px]">
               <span>• Cosmic Guidance</span>
               <span>• Meditation Coaching</span>
@@ -65,7 +66,7 @@ export default function FooterSmall() {
         <motion.div className="flex flex-col gap-2" variants={fadeUp}>
           <strong className="text-[#544120] text-[13px]">Content & Learning</strong>
           <div className="flex flex-col text-[#544120] text-[13px]">
-            <span>Blogs</span>
+                   <span><Link href="/Blog" className="cursor-pointer">Blog</Link></span>
             <span>Videos / Reels</span>
           </div>
         </motion.div>
@@ -93,12 +94,23 @@ export default function FooterSmall() {
             <span>Mobile: (+91) 9811237999</span>
             <span>Email: info@happyho.in</span>
           </div>
-          <div className="flex gap-3 mt-5 lg:mt-0 lg:ml-auto text-[13px] lg:text-lg">
-            <span>FaceBook</span>
-            <span>Instagram</span>
-            <span>Twitter</span>
-            <span>YouTube</span>
-          </div>
+          <div className="flex gap-3 mt-5 lg:mt-0 lg:ml-auto items-center">
+                      {[
+                        { src: "/200.png", label: "FaceBook" },
+                        { src: "/201.png", label: "Instagram" },
+                        { src: "/202.png", label: "Twitter" },
+                        { src: "/203.png", label: "YouTube" },
+                      ].map((item, i) => (
+                        <Image
+                          key={i}
+                          src={item.src}
+                          alt={item.label}
+                          width={100}
+                          height={60}
+                          className="w-10 h-10 lg:w-18 lg:h-18 object-contain"
+                        />
+                      ))}
+                    </div>
         </motion.div>
       </div>
     </motion.div>

@@ -118,7 +118,7 @@ export default function Footer() {
                   alt={item.label}
                   width={100}
                   height={60}
-                  className="w-6 h-6 lg:w-18 lg:h-18 object-contain"
+                  className="w-6 h-6 md:w-12 md:h-12 lg:w-15 lg:h-15 object-contain"
                 />
               ))}
             </div>
