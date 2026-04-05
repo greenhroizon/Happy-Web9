@@ -3,6 +3,7 @@
 import { Card } from "./ui/card";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const programs = [
   { title: "Executive\nCoaching", image: "/24.png", desc: "Guidance for leaders and professionals to develop clarity, emotional intelligence, and strategic decision-making." },
@@ -18,6 +19,7 @@ const programs = [
 
 export default function Explore() {
   // Animations
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     show: {
@@ -59,18 +61,27 @@ export default function Explore() {
           variants={stagger}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-12 md:gap-x-6  xl:gap-y-6 xl:gap-x-6 max-w-[1000px] mx-auto w-full justify-items-center"
         >
-          {programs.map((program, index) => (
+          {programs.map((program:any, index:number) => (
             
-            <motion.div
-              key={program.title}
-              variants={fadeUp}
-              whileTap={{ scale: 0.97 }}
-              className="w-full"
-            >
+           <motion.div
+  key={program.title}
+  variants={fadeUp}
+  whileTap={{ scale: 0.97 }}
+  className="w-full"
+  onClick={() =>
+    setActiveIndex(activeIndex === index ? null : index)
+  }
+>
              <Card className="group relative w-full md:h-65 rounded-2xl border p-4 flex flex-col items-center justify-center text-center transition-all duration-300 bg-[#f3efe8] border-[#3d3020] overflow-hidden">
 
   {/* Default Content */}
-  <div className="flex flex-col items-center justify-center gap-2 transition-all duration-300 group-hover:opacity-0 group-hover:scale-95">
+  <div
+  className={`
+    flex flex-col items-center justify-center gap-2 transition-all duration-300
+    md:group-hover:opacity-0 md:group-hover:scale-95
+    ${activeIndex === index ? "opacity-0 scale-95" : "opacity-100"}
+  `}
+>
     
     <motion.div
       initial={{ scale: 0 }}
@@ -91,7 +102,14 @@ export default function Explore() {
   </div>
 
   {/* Hover Content */}
-<div className="absolute inset-0 bg-[#544120] flex flex-col items-center justify-center px-6 opacity-0 group-hover:opacity-100 transition-all duration-300 gap-2">
+<div
+  className={`
+    absolute inset-0 bg-[#544120] flex flex-col items-center justify-center px-6
+    transition-all duration-300 gap-2
+    md:opacity-0 md:group-hover:opacity-100
+    ${activeIndex === index ? "opacity-100" : "opacity-0"}
+  `}
+>
   
   <span className="text-2xl whitespace-pre-line text-white">
     {program.title}
