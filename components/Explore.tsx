@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const programs = [
-  { title: "Executive\nCoaching", image: "/14.png" },
+  { title: "Executive\nCoaching", image: "/24.png" },
   { title: "Happiness\nCoaching", image: "/11.png" },
   { title: "Life\nCoaching", image: "/12.png" },
   { title: "Relationship\nCoaching", image: "/13.png" },

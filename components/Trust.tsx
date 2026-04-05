@@ -66,7 +66,7 @@ export default function Trust() {
               <Image
                 src={src}
                 alt="logo"
-                width={150}
+                width={180}
                 height={120}
                 className="object-contain w-full"
               />

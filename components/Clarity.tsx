@@ -31,7 +31,7 @@ export default function Clarity() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="md:grid md:grid-cols-6 items-center text-white max-w-5xl mx-auto gap-6 mx-auto"
+        className="md:grid md:grid-cols-6 items-center text-white max-w-5xl mx-auto gap-4 mx-auto"
       >
 
         {/* LEFT → End comma (middle) */}
@@ -59,7 +59,7 @@ export default function Clarity() {
             The structure made the difference.
           </span>
 
-          <span className="mt-4 text-2xl lg:text-2xl md:text-xl text-left md:text-center  opacity-80">
+          <span className="mt-4 text-2xl lg:text-2xl md:text-xl text-right opacity-80">
             — Unknown
           </span>
         </motion.div>
@@ -67,7 +67,7 @@ export default function Clarity() {
         {/* RIGHT → Start comma (top) */}
         <motion.div
           variants={fadeUp}
-          className="flex justify-end items-end mt-15 -ml-5 h-full md:block hidden "
+          className="pt-8 -ml-5 h-full md:block hidden"
         >
           <Image
             src="/end-comma.png"

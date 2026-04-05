@@ -38,7 +38,7 @@ export default function Coaching(){
       >
         <motion.span
           variants={fadeUp}
-          className="text-center text-lg xl:text-4xl font-canela font-normal"
+          className="text-center text-lg xl:text-5xl font-canela font-normal"
         >
           Programs designed for emotional clarity and growth
         </motion.span>

@@ -65,7 +65,7 @@ export default function Sessions() {
         </div>
 
         <motion.div
-          className="flex justify-center gap-10"
+          className="flex justify-center gap-6"
           variants={fadeUp}
         >
           <Button className="px-20 py-6 rounded-full bg-[#544120] text-white border-2 border-yellow-400">

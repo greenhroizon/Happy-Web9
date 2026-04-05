@@ -25,6 +25,23 @@ export default function Emotional() {
     },
   };
 
+            {/* Row 1 */}
+  const images = [
+  "/strip1-1.png",
+   "/strip1-2.png",
+    "/strip1-3.png",
+     "/strip1-4.png",
+      "/strip1-5.png",
+];
+  const images1 = [
+  "/strip2-1.png",
+   "/strip2-2.png",
+    "/strip2-3.png",
+     "/strip2-4.png",
+      "/strip2-5.png",
+];
+
+
   return (
     <div className="mx-auto max-w-[1920px] p-6 md:p-8">
       <motion.div
@@ -37,39 +54,38 @@ export default function Emotional() {
         {/* ================= Image Marquee ================= */}
         <motion.div variants={fadeUp} className="w-full space-y-4 md:space-y-6">
           
-          {/* Row 1 */}
-          <div className="overflow-hidden w-full">
-            <motion.div
-              className="flex gap-3 sm:gap-4 md:gap-6 w-max min-w-full"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                duration: 25,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-            >
-              {[...Array(2)].map((_, repeatIndex) => (
-                <div key={repeatIndex} className="flex gap-3 sm:gap-4 md:gap-6">
-                  {[0, 1, 2, 3, 4, 5].map((i) => (
-                    <motion.div
-                      key={i}
-                      whileHover={{ scale: 1.05 }}
-                      className="overflow-hidden rounded-2xl"
-                    >
-                      <Image
-                        src="/l8.png"
-                        alt=""
-                        width={300}
-                        height={200}
-                        className="w-[140px] sm:w-[160px] md:w-[240px] lg:w-[280px]
-                                   h-[90px] sm:h-[110px] md:h-[150px] lg:h-[180px] object-cover"
-                      />
-                    </motion.div>
-                  ))}
-                </div>
-              ))}
-            </motion.div>
-          </div>
+        <div className="overflow-hidden w-full">
+          <motion.div
+            className="flex gap-3 sm:gap-4 md:gap-6 w-max min-w-full"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 25,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {[...Array(2)].map((_, repeatIndex) => (
+              <div key={repeatIndex} className="flex gap-3 sm:gap-4 md:gap-6">
+                {images.map((src, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.05 }}
+                    className="overflow-hidden rounded-2xl"
+                  >
+                    <Image
+                      src={src}
+                      alt={`image-${i}`}
+                      width={300}
+                      height={200}
+                      className="w-[140px] sm:w-[160px] md:w-[240px] lg:w-[280px]
+                                h-[90px] sm:h-[110px] md:h-[150px] lg:h-[180px] object-cover"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            ))}
+          </motion.div>
+        </div>
 
           {/* Row 2 (reverse direction) */}
           <div className="overflow-hidden w-full">
@@ -84,15 +100,15 @@ export default function Emotional() {
             >
               {[...Array(2)].map((_, repeatIndex) => (
                 <div key={repeatIndex} className="flex gap-3 sm:gap-4 md:gap-6">
-                  {[0, 1, 2, 3, 4, 5].map((i) => (
+                   {images1.map((src, i) => (
                     <motion.div
                       key={i}
                       whileHover={{ scale: 1.05 }}
                       className="overflow-hidden rounded-2xl"
                     >
                       <Image
-                        src="/l8.png"
-                        alt=""
+                        src={src}
+                        alt={`image-${i}`}
                         width={300}
                         height={200}
                         className="w-[140px] sm:w-[160px] md:w-[240px] lg:w-[280px]
@@ -112,7 +128,7 @@ export default function Emotional() {
       <div className="flex flex-col gap-1 ">
                <motion.span
           variants={fadeUp}
-          className="text-xl md:text-4xl xl:text-6xl text-[#544120] font-canela font-normal"
+          className="text-xl md:text-4xl xl:text-6xl text-[#544120] font-canela font-normal pt-10"
         >
           You don’t have to navigate this alone.
         </motion.span>

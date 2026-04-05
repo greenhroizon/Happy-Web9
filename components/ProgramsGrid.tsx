@@ -16,7 +16,7 @@ export default function ProgramsGrid() {
     },
   };
   return (
-    <div className="p-6 xl:p-16">
+    <div className="p-6 xl:px-16 xl:pb-16 xl:pt-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3 w-fit mx-auto max-w-[1920px]">
             <motion.div
             className="w-full max-w-[320px]"

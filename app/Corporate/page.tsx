@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import FooterSmall from "@/components/FooterSmall";
 import Header from "@/components/Header";
 import ProgramsGrid from "@/components/ProgramsGrid";
 import Sessions from "@/components/Sessions";
@@ -16,7 +17,12 @@ export default function Corporate(){
             <ProgramsGrid/>
             <Trust/>
             <Work/>
-            <Footer/>
+           <div className="hidden md:block">
+                  <Footer/>
+              </div>
+                <div className="block md:hidden">
+                  <FooterSmall/>
+              </div>
         </>
     );
 }

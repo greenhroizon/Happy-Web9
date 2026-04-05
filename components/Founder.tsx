@@ -95,7 +95,7 @@ export default function Founder() {
         </div>
 
 {/* RIGHT IMAGE */}
-<div className="flex justify-center md:justify-center md:items-end xl:justify-start xl:items-end mt-10">
+<div className="hidden md:flex justify-center md:justify-center md:items-end xl:justify-start xl:items-end mt-10">
   <motion.div
     variants={imageAnim}
     className="flex flex-col items-center md:items-start gap-3 lg:mr-10"

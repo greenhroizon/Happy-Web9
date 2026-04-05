@@ -72,20 +72,27 @@ export default function Growth() {
         </motion.div>
 
         {/* Cards */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-8 xl:mt-10"
-        >
+       <motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+  className="
+    flex flex-nowrap overflow-x-auto gap-8 px-4 w-full
+    xl:flex-wrap xl:overflow-visible xl:justify-center xl:mt-10
+  "
+  style={{ WebkitOverflowScrolling: "touch" }}
+>
           {cards.map((card, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              whileHover={{ scale: 1.05 }}
-              className="w-full sm:w-[45%] lg:w-[30%] max-w-[350px]"
-            >
+         <motion.div
+  key={index}
+  variants={fadeUp}
+  whileHover={{ scale: 1.05 }}
+  className="
+    w-full sm:w-[45%] lg:w-[30%] max-w-[350px]
+    flex-shrink-0
+  "
+>
               <Card className="flex flex-col min-h-[420px] border-3 border-yellow-400 bg-[#7d8d83] rounded-4xl p-4 transition-all duration-300 hover:shadow-xl">
                 
                 <motion.div 

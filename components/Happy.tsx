@@ -36,24 +36,20 @@ export default function Happy() {
         {/* Heading */}
         <motion.div
           variants={fadeUp}
-          className="text-3xl md:text-5xl text-[#dcd8ce]"
+          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#dcd8ce]"
         >
           What makes Happy Ho different
         </motion.div>
 
         {/* Paragraph lines */}
-        <motion.div className="flex flex-col text-lg md:text-2xl text-left md:text-center">
-          {[
-            "Many wellness platforms offer inspiration or quick advice.",
-            "Happy Ho focuses on building sustainable habits that help",
-            "people navigate emotions, relationships, and personal growth",
-            "more intentionally.",
-          ].map((line, index) => (
-            <motion.span key={index} variants={fadeUp}>
-              {line}
-            </motion.span>
-          ))}
-        </motion.div>
+       <motion.div className="flex flex-col text-lg md:text-2xl text-left md:text-center">
+        <motion.span variants={fadeUp}>
+          Many wellness platforms offer inspiration or quick advice.<br className="lg:block hidden"/>
+          Happy Ho focuses on building sustainable habits that help<br className="lg:block hidden"/>
+          people navigate emotions, relationships, and personal growth<br className="lg:block hidden"/>
+          more intentionally.
+        </motion.span>
+      </motion.div>
 
       </motion.div>
     </div>

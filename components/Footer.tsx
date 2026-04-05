@@ -38,12 +38,12 @@ export default function Footer() {
             <span>
               <strong className="text-[#544120] text-sm lg:text-xl">About</strong>
             </span>
-            <div className="flex flex-col text-[#544120]">
+            <div className="flex flex-col text-[#544120] text-[13px] lg:text-lg">
               <span>Founder’s Note</span>
-              <span>About Happy Ho</span>
-              <span>Why Happy Ho</span>
+              <span>Meet Our Guides</span>
+              {/* <span>Why Happy Ho</span>
               <span>Our Approach</span>
-              <span>How It Works</span>
+              <span>How It Works</span> */}
             </div>
           </motion.div>
 
@@ -52,19 +52,19 @@ export default function Footer() {
             <span>
               <strong className="text-[#544120] text-sm lg:text-xl">Our Programs</strong>
             </span>
-            <div className="flex flex-col text-[#544120]">
+            <div className="flex flex-col text-[#544120] text-[13px] lg:text-lg">
               <span>For Individuals</span>
               <span>For Organizations</span>
               <span>Signature Programs</span>
-              <div className="flex flex-col pl-4">
-                <span>• Cosmic <span className="hidden lg:inline">Guidance</span></span>
-                <span className="lg:hidden">&nbsp;&nbsp; Guidance</span>
+              <div className="flex flex-col pl-4 text-[10px] md:text-[12px] lg:text-[16px] xl:text-lg">
+                <span>• Cosmic Guidance</span>
+                {/* <span className="lg:hidden">&nbsp;&nbsp; Guidance</span> */}
 
-                <span>• Meditation <span className="hidden lg:inline">Coaching</span></span>
-                <span className="lg:hidden">&nbsp;&nbsp; Coaching</span>
+                <span>• Meditation Coaching</span>
+                {/* <span className="lg:hidden">&nbsp;&nbsp; Coaching</span> */}
 
-                <span>• Holistic <span className="hidden lg:inline">Healing</span></span>
-                <span className="lg:hidden">&nbsp;&nbsp; Healing</span>
+                <span>• Holistic Healing</span>
+                {/* <span className="lg:hidden">&nbsp;&nbsp; Healing</span> */}
               </div>
             </div>
           </motion.div>
@@ -74,7 +74,7 @@ export default function Footer() {
             <span>
               <strong className="text-[#544120] text-sm lg:text-xl">Content & Learning</strong>
             </span>
-            <div className="flex flex-col text-[#544120]">
+            <div className="flex flex-col text-[#544120] text-[13px] lg:text-lg">
               <span>Blogs</span>
               <span>Videos / Reels</span>
             </div>
@@ -89,22 +89,22 @@ export default function Footer() {
         {/* Contact Section */}
         <motion.div className="flex flex-col gap-2" variants={fadeUp}>
           <span>
-            <strong className="text-[#544120] text-xl">Contact</strong>
+            <strong className="text-[#544120] text-lg lg:text-xl">Contact</strong>
           </span>
           <div className="flex flex-col gap-5">
-            <motion.div className="flex flex-col text-[#544120]" variants={fadeUp}>
+            <motion.div className="flex flex-col text-[#544120] text-[13px] lg:text-lg" variants={fadeUp}>
               <span>
                 Address – Tower 7 – 202, Ace Parkway, <br />
                 Sector 150, Gautam Budh Nagar, 201310,<br />
                 NOIDA, Uttar Pradesh, India (Bharat)
               </span>
             </motion.div>
-            <motion.div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 md:gap-15 lg:gap-30" variants={fadeUp}>
-              <div className="flex flex-col">
+            <motion.div className="grid grid-cols-1 md:grid-cols-2 text-[#544120] xl:grid-cols-2 md:gap-15 lg:gap-30" variants={fadeUp}>
+              <div className="flex flex-col text-[13px] lg:text-lg">
                 <span>Mobile: (+91) 9811237999</span>
                 <span>Email: info@happyho.in</span>
               </div>
-              <div className="flex gap-3 mt-5 lg:mt-0 lg:ml-auto text-sm">
+              <div className="flex gap-3 mt-5 lg:mt-0 lg:ml-auto text-[13px] lg:text-lg">
                 <span>FaceBook</span>
                 <span>Instagram</span>
                 <span>Twitter</span>

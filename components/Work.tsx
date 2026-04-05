@@ -64,7 +64,7 @@ export default function Work() {
             </div>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center font-canela font-normal">
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center font-canela font-normal mt-10">
           <span className="text-xl md:text-2xl xl:text-5xl text-[#77510f]">
             Build a Happier, Healthier Workplace
           </span>

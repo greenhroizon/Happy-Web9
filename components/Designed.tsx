@@ -41,49 +41,71 @@ export default function Designed() {
   };
 
   return (
-    <div className="mx-auto max-w-[1920px] pt-8 px-4 md:p-10 xl:p-16">
+    <div className="mx-auto pt-8 px-4 md:p-10 xl:p-16">
       <div className="flex flex-col gap-5 lg:gap-20 items-center justify-center">
 
         {/* ================= Stats Section ================= */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 gap-12 lg:gap-6 lg:grid-cols-4 items-center justify-center"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              className="flex items-center"
-            >
-              <div className="flex flex-col gap-4 lg:px-16 text-center">
+<motion.div
+  variants={container}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+  className="grid grid-cols-2 gap-6 lg:gap-0 lg:grid-cols-4 items-center justify-center w-fit"
+>
 
-                <motion.strong
-                  variants={fadeUp}
-                  className="text-4xl md:text-7xl lg:text-6xl text-[#544120]"
-                >
-                  {stat.value}
-                </motion.strong>
+  {/* Item 1 */}
+  <motion.div variants={fadeUp} className="flex items-center justify-center lg:border-r-2 lg:border-[#D4A437]">
+    <div className="flex flex-col gap-4 lg:px-10 text-center">
+      <motion.strong variants={fadeUp} className="text-4xl md:text-7xl lg:text-6xl text-[#544120]">
+        1K+
+      </motion.strong>
+      <motion.div variants={fadeUp} className="flex flex-col">
+        <span className="text-sm md:text-xl text-[#c39e86]">Customers</span>
+        <span className="text-sm md:text-xl text-[#c39e86]">Worldwide</span>
+      </motion.div>
+    </div>
+  </motion.div>
 
-                <motion.div variants={fadeUp} className="flex flex-col">
-                  <span className="text-sm md:text-xl text-[#c39e86]">
-                    {stat.label1}
-                  </span>
-                  <span className="text-sm md:text-xl text-[#c39e86]">
-                    {stat.label2}
-                  </span>
-                </motion.div>
-              </div>
+  {/* Item 2 */}
+  <motion.div variants={fadeUp} className="flex items-center justify-center lg:border-r-2 lg:border-[#D4A437]">
+    <div className="flex flex-col gap-4 lg:px-10 text-center">
+      <motion.strong variants={fadeUp} className="text-4xl md:text-7xl lg:text-6xl text-[#544120]">
+        20+
+      </motion.strong>
+      <motion.div variants={fadeUp} className="flex flex-col">
+        <span className="text-sm md:text-xl text-[#c39e86]">Awards &</span>
+        <span className="text-sm md:text-xl text-[#c39e86]">Honours</span>
+      </motion.div>
+    </div>
+  </motion.div>
 
-           {index < stats.length - 1 && (
-              <div className="hidden lg:block h-32 w-[2px] bg-[#D4A437] mx-4 self-stretch" />
-            )}
-            </motion.div>
-          ))}
-        </motion.div>
+  {/* Item 3 */}
+  <motion.div variants={fadeUp} className="flex items-center justify-center lg:border-r-2 lg:border-[#D4A437]">
+    <div className="flex flex-col gap-4 lg:px-10 text-center">
+      <motion.strong variants={fadeUp} className="text-4xl md:text-7xl lg:text-6xl text-[#544120]">
+        521+
+      </motion.strong>
+      <motion.div variants={fadeUp} className="flex flex-col">
+        <span className="text-sm md:text-xl text-[#c39e86]">Workshops</span>
+        <span className="text-sm md:text-xl text-[#c39e86]">&nbsp;</span>
+      </motion.div>
+    </div>
+  </motion.div>
 
+  {/* Item 4 */}
+  <motion.div variants={fadeUp} className="flex items-center justify-center">
+    <div className="flex flex-col gap-4 lg:px-10 text-center">
+      <motion.strong variants={fadeUp} className="text-4xl md:text-7xl lg:text-6xl text-[#544120]">
+        22+
+      </motion.strong>
+      <motion.div variants={fadeUp} className="flex flex-col">
+        <span className="text-sm md:text-xl text-[#c39e86]">Retreats</span>
+        <span className="text-sm md:text-xl text-[#c39e86]">&nbsp;</span>
+      </motion.div>
+    </div>
+  </motion.div>
+
+</motion.div>
         {/* ================= Heading ================= */}
         <motion.div
           variants={fadeUp}
@@ -98,12 +120,63 @@ export default function Designed() {
         </motion.div>
 
         {/* ================= Cards ================= */}
+        
+<motion.div
+  variants={stagger}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+  className="xl:hidden flex overflow-x-auto gap-6 px-4 mt-3 w-full"
+  style={{ WebkitOverflowScrolling: "touch" }}
+>
+  {[
+    { img: "/3.png", title: "Consciousness Guidance", bg: "#dcd8ce" },
+    { img: "/4.png", title: "Meditation Coaching", bg: "#7d7d83" },
+    { img: "/5.png", title: "Holistic Healing", bg: "#3f5c4a" },
+  ].map((card, i) => (
+  <motion.div
+  key={i}
+  variants={fadeUp}
+  whileTap={{ scale: 0.97 }}
+  className="min-w-[280px] sm:min-w-[320px] flex-shrink-0"
+>
+      <Card
+        className="flex h-90 w-full lg:h-100 lg:w-90 flex-col justify-between border-3 border-[#C9A84C] px-6 pb-8 rounded-4xl"
+        style={{ backgroundColor: card.bg }}
+      >
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.4 }}
+          className="flex items-center justify-center"
+        >
+          <Image
+            src={card.img}
+            alt=""
+            width={220}
+            height={220}
+            className="w-50 h-50 md:w-55 md:h-55 lg:w-60 lg:h-60"
+          />
+        </motion.div>
+
+        <div
+          className={`text-left text-3xl lg:text-4xl ${
+            i === 0 ? "text-[#544120]" : "text-[#f3efe8]"
+          }`}
+        >
+          {card.title.split(" ")[0]} <br />
+          {card.title.split(" ")[1]}
+        </div>
+      </Card>
+    </motion.div>
+  ))}
+</motion.div>
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="flex flex-wrap items-center justify-center gap-8 lg:gap-5 mt-3"
+          className="hidden xl:flex flex-wrap items-center justify-center gap-5 mt-3"
         >
           {[ 
             { img: "/3.png", title: "Consciousness Guidance", bg: "#dcd8ce" },
@@ -111,7 +184,7 @@ export default function Designed() {
             { img: "/5.png", title: "Holistic Healing", bg: "#3f5c4a" },
           ].map((card, i) => (
             <motion.div key={i} variants={fadeUp}     whileTap={{ scale: 0.97 }} className="w-[95%] md:w-[45%] lg:w-auto">
-              <Card className="flex h-90 w-full lg:h-100 lg:w-90 flex-col justify-between border-4 border-[#D4A437] px-6 pb-8 rounded-4xl"
+              <Card className="flex h-90 w-full lg:h-100 lg:w-90 flex-col justify-between border-3 border-[#C9A84C] px-6 pb-8 rounded-4xl"
                 style={{ backgroundColor: card.bg }}
               >
                 <motion.div 

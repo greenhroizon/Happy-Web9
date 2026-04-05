@@ -50,9 +50,9 @@ export default function Discover() {
         {/* Heading */}
         <motion.h1
           variants={fadeUp}
-          className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-10 md:mb-16 xl:mb-50 2xl:mb-100 font-canela font-normal text-[#2d2d2d]"
+          className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-10 md:mb-16 xl:mb-30 2xl:mb-100 font-canela font-normal text-[#2d2d2d]"
         >
-          Take the first
+          Take the first Step
         </motion.h1>
 
         {/* Layout */}
