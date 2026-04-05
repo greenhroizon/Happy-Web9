@@ -55,8 +55,8 @@ export default function Footer() {
             </span>
             <div className="flex flex-col text-[#544120] text-[13px] lg:text-lg">
               <span>For Individuals</span>
-              <span>For Organizations</span>
-              <span>Signature Programs</span>
+              <span><Link href="/AboutUs" className="cursor-pointer">For Organizations</Link></span>
+              <span><Link href="/Programs" className="cursor-pointer">Signature Programs </Link></span>
               <div className="flex flex-col pl-4 text-[10px] md:text-[12px] lg:text-[16px] xl:text-lg">
                 <span>• Cosmic Guidance</span>
                 {/* <span className="lg:hidden">&nbsp;&nbsp; Guidance</span> */}
@@ -105,12 +105,23 @@ export default function Footer() {
                 <span>Mobile: (+91) 9811237999</span>
                 <span>Email: info@happyho.in</span>
               </div>
-              <div className="flex gap-3 mt-5 lg:mt-0 lg:ml-auto text-[13px] lg:text-lg">
-                <span>FaceBook</span>
-                <span>Instagram</span>
-                <span>Twitter</span>
-                <span>YouTube</span>
-              </div>
+              <div className="flex gap-3 mt-5 lg:mt-0 lg:ml-auto items-center">
+              {[
+                { src: "/200.png", label: "FaceBook" },
+                { src: "/201.png", label: "Instagram" },
+                { src: "/202.png", label: "Twitter" },
+                { src: "/203.png", label: "YouTube" },
+              ].map((item, i) => (
+                <Image
+                  key={i}
+                  src={item.src}
+                  alt={item.label}
+                  width={100}
+                  height={60}
+                  className="w-6 h-6 lg:w-18 lg:h-18 object-contain"
+                />
+              ))}
+            </div>
             </motion.div>
           </div>
         </motion.div>
