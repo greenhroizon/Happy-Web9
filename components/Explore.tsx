@@ -78,7 +78,7 @@ export default function Explore() {
   <div
   className={`
     flex flex-col items-center justify-center gap-2 transition-all duration-300
-    md:group-hover:opacity-0 md:group-hover:scale-95
+    xl:group-hover:opacity-0 xl:group-hover:scale-95
     ${activeIndex === index ? "opacity-0 scale-95" : "opacity-100"}
   `}
 >
@@ -106,7 +106,7 @@ export default function Explore() {
   className={`
     absolute inset-0 bg-[#544120] flex flex-col items-center justify-center px-6
     transition-all duration-300 gap-2
-    md:opacity-0 md:group-hover:opacity-100
+    xl:opacity-0 xl:group-hover:opacity-100
     ${activeIndex === index ? "opacity-100" : "opacity-0"}
   `}
 >
