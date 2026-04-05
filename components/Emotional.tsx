@@ -27,18 +27,18 @@ export default function Emotional() {
 
             {/* Row 1 */}
   const images = [
-  "/strip1-1.png",
-  "/strip1-2.png",
-  "/strip1-3.png",
-  "/strip2-1.png",
-  "/strip1-5.png",
+  "/300.png",
+  "/302.png",
+  "/303.png",
+  "/304.png",
+  "/402.png",
 ];
   const images1 = [
-  "/strip2-4.png",
-  "/strip2-2.png",
-  "/strip2-3.png",
-  "/strip1-4.png",
-  "/strip2-5.png",
+  "/400.png",
+  "/401.png",
+  "/402.png",
+  "/403.png",
+  "/302.png",
 ];
 
 

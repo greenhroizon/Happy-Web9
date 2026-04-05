@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Step from "@/components/Step";
 import Guides from "@/components/Guides";
+import FooterSmall from "@/components/FooterSmall";
 
 export default function AboutUs(){
     return(
@@ -34,7 +35,12 @@ export default function AboutUs(){
 
         {/* Overlapping Footer */}
         <div className="relative z-20 -mt-10 md:-mt-15 xl:-mt-20">
-          <Footer/>
+          <div className="hidden md:block">
+                 <Footer/>
+             </div>
+               <div className="block md:hidden">
+                 <FooterSmall/>
+             </div>
         </div>
         </>
     );
