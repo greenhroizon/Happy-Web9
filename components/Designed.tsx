@@ -41,7 +41,7 @@ export default function Designed() {
   };
 
   return (
-    <div className="mx-auto pt-8 px-4 md:p-10 xl:p-16">
+    <div className="mx-auto max-w-[1920px] pt-8 px-4 md:p-10 xl:p-16">
       <div className="flex flex-col gap-5 lg:gap-20 items-center justify-center">
 
         {/* ================= Stats Section ================= */}
@@ -166,7 +166,7 @@ export default function Designed() {
         alt=""
         width={320}
         height={360}
-        className="w-full h-110 object-cover rounded-4xl"
+        className="w-full h-110 2xl:h-150 object-cover rounded-4xl"
       />
     </motion.div>
   ))}

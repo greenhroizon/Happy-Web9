@@ -54,7 +54,7 @@ export default function Growth() {
 
 
   return (
-    <div className="px-4 pt-8 xl:p-16">
+    <div className="px-4 pt-8 xl:p-16 mx-auto max-w-[1920px]">
       <div className="flex flex-col gap-5">
 
         {/* Heading */}
@@ -127,7 +127,7 @@ export default function Growth() {
                 alt=""
                 width={320}
                 height={360}
-                className="w-full h-150 object-cover rounded-4xl"
+                className="w-full 2xl:h-190 object-cover rounded-4xl"
               />
             </motion.div>
           ))}

@@ -30,7 +30,7 @@ export default function Discover() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/2.png"
+          src="/e10.png"
           alt="background"
           className="w-full h-full object-cover object-bottom"
         />
@@ -48,7 +48,7 @@ export default function Discover() {
         {/* Heading */}
         <motion.h1
           variants={fadeUp}
-          className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-10 md:mb-16 xl:mb-50 font-canela font-normal text-[#2d2d2d]"
+          className="text-2xl text-center md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-10 md:mb-16 xl:mb-20 2xl:mb-45 font-canela font-normal text-[#2d2d2d]"
         >
           Discover the program that fits your life and goals
         </motion.h1>
@@ -59,7 +59,7 @@ export default function Discover() {
           {/* LEFT FORM */}
           <motion.div
             variants={container}
-            className="flex flex-col md:justify-end lg:justify-center gap-6 max-w-[520px] mx-auto md:mx-0"
+            className="flex flex-col md:justify-end lg:justify-center gap-6 max-w-[520px] mx-auto md:mx-0 md:pt-15 lg:pt-20 xl:pb-20 2xl:pb-30 2xl:pl-50"
           >
 
             {/* NAME */}

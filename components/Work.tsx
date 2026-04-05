@@ -32,7 +32,7 @@ export default function Work() {
         viewport={{ once: true }}
         className="flex flex-col gap-6 xl:gap-15 mx-auto max-w-[1920px] items-center"
       >
-        <motion.span variants={fadeUp} className="text-center text-xl xl:text-5xl">
+        <motion.span variants={fadeUp} className="text-center text-xl xl:text-6xl">
           How Our Corporate Programs Work
         </motion.span>
 
@@ -64,13 +64,13 @@ export default function Work() {
             </div>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center font-canela font-normal mt-10">
-          <span className="text-xl md:text-2xl xl:text-5xl text-[#77510f]">
+        <motion.div variants={fadeUp} className="flex flex-col gap-2 text-center mt-10">
+          <span className="text-xl md:text-2xl xl:text-6xl text-[#77510f] font-canela font-normal">
             Build a Happier, Healthier Workplace
           </span>
 
           <div className="flex flex-col gap-1 text-[#7d4545]">
-            <span className="text-sm md:text-xl xl:text-4xl">
+            <span className="text-sm md:text-xl xl:text-2xl">
               Empower your teams with mindfulness, emotional intelligence,<br className="hidden md:block"/> and resilience training.
             </span>
           </div>
