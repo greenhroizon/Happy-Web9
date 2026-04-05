@@ -35,7 +35,7 @@ export default function Emotional() {
 ];
   const images1 = [
   "/400.png",
-  "/401.png",
+  "/304.png",
   "/402.png",
   "/403.png",
   "/302.png",
