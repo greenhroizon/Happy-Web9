@@ -120,8 +120,60 @@ export default function Designed() {
         </motion.div>
 
         {/* ================= Cards ================= */}
-        
+
+        <motion.div
+  variants={stagger}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+  className="xl:hidden flex overflow-x-auto gap-6 px-4 mt-3 w-full scrollbar-hide"
+  style={{ WebkitOverflowScrolling: "touch" }}
+>
+  {["/58.png", "/59.png", "/60.png"].map((img, i) => (
+    <motion.div
+      key={i}
+      variants={fadeUp}
+      whileTap={{ scale: 0.97 }}
+      className="min-w-[280px] sm:min-w-[320px] flex-shrink-0"
+    >
+      <Image
+        src={img}
+        alt=""
+        width={320}
+        height={360}
+        className="w-full h-90 object-cover rounded-4xl"
+      />
+    </motion.div>
+  ))}
+</motion.div>
 <motion.div
+  variants={stagger}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: true }}
+  className="hidden xl:flex flex-wrap justify-center gap-6 px-4 mt-3 w-full"
+>
+  {["/58.png", "/59.png", "/60.png"].map((img, i) => (
+    <motion.div
+      key={i}
+      variants={fadeUp}
+      whileTap={{ scale: 0.97 }}
+      whileHover={{ scale: 1.03 }}
+      className="w-full sm:w-[48%] lg:w-[30%]"
+    >
+      <Image
+        src={img}
+        alt=""
+        width={320}
+        height={360}
+        className="w-full h-110 object-cover rounded-4xl"
+      />
+    </motion.div>
+  ))}
+</motion.div>
+
+        
+{/* <motion.div
   variants={stagger}
   initial="hidden"
   whileInView="show"
@@ -170,8 +222,8 @@ export default function Designed() {
       </Card>
     </motion.div>
   ))}
-</motion.div>
-        <motion.div
+</motion.div> */}
+        {/* <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="show"
@@ -179,9 +231,9 @@ export default function Designed() {
           className="hidden xl:flex flex-wrap items-center justify-center gap-5 mt-3"
         >
           {[ 
-            { img: "/3.png", title: "Consciousness Guidance", bg: "#dcd8ce" },
-            { img: "/4.png", title: "Meditation Coaching", bg: "#7d7d83" },
-            { img: "/5.png", title: "Holistic Healing", bg: "#3f5c4a" },
+            { img: "/68.png", title: "Consciousness Guidance", bg: "#dcd8ce" },
+            { img: "/69.png", title: "Meditation Coaching", bg: "#7d7d83" },
+            { img: "/70.png", title: "Holistic Healing", bg: "#3f5c4a" },
           ].map((card, i) => (
             <motion.div key={i} variants={fadeUp}     whileTap={{ scale: 0.97 }} className="w-[95%] md:w-[45%] lg:w-auto">
               <Card className="flex h-90 w-full lg:h-100 lg:w-90 flex-col justify-between border-3 border-[#C9A84C] px-6 pb-8 rounded-4xl"
@@ -212,7 +264,7 @@ export default function Designed() {
               </Card>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* ================= Therapy Formats ================= */}
         <motion.div
@@ -284,3 +336,10 @@ export default function Designed() {
     </div>
   );
 }
+
+
+
+          // {[ 
+          //   { img: "/68.png", title: "Consciousness Guidance", bg: "#dcd8ce" },
+          //   { img: "/69.png", title: "Meditation Coaching", bg: "#7d7d83" },
+          //   { img: "/70.png", title: "Holistic Healing", bg: "#3f5c4a" },
