@@ -3,9 +3,10 @@
 import { Card } from "./ui/card";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import { useRef, useState } from "react";
 export default function Coaching(){
-
+const scrollRef = useRef<HTMLDivElement>(null);
+const [activeIndex, setActiveIndex] = useState(0);
 
   const container = {
     hidden: {},
@@ -24,6 +25,15 @@ export default function Coaching(){
       transition: { duration: 0.6, ease: "easeOut" as const},
     },
   };
+  const handleScroll = () => {
+  if (!scrollRef.current) return;
+
+  const scrollLeft = scrollRef.current.scrollLeft;
+  const cardWidth = 300; // approx (w-70 ≈ 280px + gap)
+
+  const index = Math.round(scrollLeft / cardWidth);
+  setActiveIndex(index);
+};
 
   return(
     <div className="px-4 pt-8 xl:p-16">
@@ -59,6 +69,8 @@ export default function Coaching(){
 
       {/* 🔹 Cards */}
   <motion.div
+    ref={scrollRef}
+  onScroll={handleScroll}
   variants={container}
   initial="hidden"
   whileInView="show"
@@ -73,7 +85,7 @@ export default function Coaching(){
 
         {/* Card 1 */}
         <motion.div variants={fadeUp} whileTap={{ scale: 0.97 }} className="flex-shrink-0">
-          <Card className="flex h-110 w-75 md:w-85 flex-col border-3 border-yellow-400 gap-0 p-0 rounded-4xl">
+          <Card className="flex h-110 w-70 md:w-85 flex-col border-3 border-yellow-400 gap-0 p-0 rounded-4xl">
             <div className="flex flex-col w-full items-center justify-center rounded-t-xl bg-[#dcd8ce]">
               
               <motion.div
@@ -96,7 +108,7 @@ export default function Coaching(){
 
         {/* Card 2 */}
      <motion.div variants={fadeUp} whileTap={{ scale: 0.97 }} className="flex-shrink-0">
-          <Card className="flex h-110 w-75 md:w-85 flex-col border-3 border-yellow-400 gap-0 p-0 rounded-4xl">
+          <Card className="flex h-110 w-70 md:w-85 flex-col border-3 border-yellow-400 gap-0 p-0 rounded-4xl">
             <div className="flex flex-col w-full items-center justify-center rounded-t-xl bg-[#7d8d83]">
               
               <motion.div
@@ -119,7 +131,7 @@ export default function Coaching(){
 
         {/* Card 3 */}
        <motion.div variants={fadeUp} whileTap={{ scale: 0.97 }} className="flex-shrink-0">
-          <Card className="flex h-110 w-75  md:w-85 flex-col border-3 border-yellow-400 gap-0 p-0 rounded-4xl">
+          <Card className="flex h-110 w-70  md:w-85 flex-col border-3 border-yellow-400 gap-0 p-0 rounded-4xl">
             <div className="flex flex-col w-full items-center justify-center rounded-t-xl bg-[#3f5c4a]">
               
               <motion.div
@@ -140,6 +152,27 @@ export default function Coaching(){
         </motion.div>
 
       </motion.div> 
+      <div className="justify-center items-center gap-2 mt-3 hidden md:flex lg:hidden pb-10">
+  {[0, 1].map((dot) => (
+    <div
+      key={dot}
+      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+        activeIndex === dot ? "bg-blue-500 scale-110" : "bg-gray-400"
+      }`}
+    />
+  ))}
+</div>
+<div className="flex justify-center items-center gap-2 mt-3 md:hidden pb-10">
+  {[0, 1, 2].map((dot) => (
+    <div
+      key={dot}
+      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+        activeIndex === dot ? "bg-blue-500 scale-110" : "bg-gray-400"
+      }`}
+    />
+  ))}
+</div>
+      
     </div>
   );
 }

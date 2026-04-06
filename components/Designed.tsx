@@ -4,14 +4,30 @@ import { Card } from "./ui/card";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
+import { useRef, useState } from "react";
 export default function Designed() {
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+const [activeIndex, setActiveIndex] = useState(0);
+
+
   const stats = [
     { value: "1K+", label1: "Customers", label2: "Worldwide" },
     { value: "20+", label1: "Awards &", label2: "Honours" },
     { value: "521+", label1: "Workshops", label2: "\u00A0" },
     { value: "22+", label1: "Retreats", label2: "\u00A0" },
   ];
+
+
+  const handleScroll = () => {
+  if (!scrollRef.current) return;
+
+  const scrollLeft = scrollRef.current.scrollLeft;
+  const cardWidth = scrollRef.current.offsetWidth; // visible width
+
+  const index = Math.round(scrollLeft / cardWidth);
+  setActiveIndex(index);
+};
 
   /* ================= Animations ================= */
 
@@ -122,20 +138,21 @@ export default function Designed() {
 
         {/* ================= Cards ================= */}
 
-        <motion.div
+<motion.div
+  ref={scrollRef}
+  onScroll={handleScroll}
   variants={stagger}
   initial="hidden"
   whileInView="show"
   viewport={{ once: true }}
-  className="xl:hidden flex overflow-x-auto gap-6 px-4 mt-3 w-full scrollbar-hide"
-  style={{ WebkitOverflowScrolling: "touch" }}
+  className="xl:hidden flex overflow-x-auto gap-6 px-4 mt-3 w-full scrollbar-hide snap-x snap-mandatory"
 >
   {["/58.png", "/59.png", "/60.png"].map((img, i) => (
     <motion.div
       key={i}
       variants={fadeUp}
       whileTap={{ scale: 0.97 }}
-      className="min-w-[280px] sm:min-w-[320px] flex-shrink-0"
+      className="min-w-[280px] sm:min-w-[320px] flex-shrink-0 snap-center"
     >
       <Image
         src={img}
@@ -147,6 +164,26 @@ export default function Designed() {
     </motion.div>
   ))}
 </motion.div>
+<div className="justify-center items-center gap-2 mt-3 hidden md:flex lg:hidden">
+  {[0, 1].map((dot) => (
+    <div
+      key={dot}
+      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+        activeIndex === dot ? "bg-blue-500 scale-110" : "bg-gray-400"
+      }`}
+    />
+  ))}
+</div>
+<div className="flex justify-center items-center gap-2 mt-3 md:hidden">
+  {[0, 1, 2].map((dot) => (
+    <div
+      key={dot}
+      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+        activeIndex === dot ? "bg-blue-500 scale-110" : "bg-gray-400"
+      }`}
+    />
+  ))}
+</div>
 <motion.div
   variants={stagger}
   initial="hidden"

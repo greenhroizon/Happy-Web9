@@ -3,8 +3,13 @@
 import { Card } from "./ui/card";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import { useRef, useState } from "react";
 export default function Growth() {
+
+
+    const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  
 
   const cards = [
     {
@@ -23,6 +28,17 @@ export default function Growth() {
       desc: "Lasting well-being is built through small daily practices that strengthen resilience and self-awareness.",
     },
   ];
+
+    const handleScroll = () => {
+  if (!scrollRef.current) return;
+
+  const scrollLeft = scrollRef.current.scrollLeft;
+  const cardWidth = scrollRef.current.offsetWidth; // visible width
+
+  const index = Math.round(scrollLeft / cardWidth);
+  setActiveIndex(index);
+};
+
 
  const container = {
     hidden: {},
@@ -83,6 +99,8 @@ export default function Growth() {
 
         
                 <motion.div
+                  ref={scrollRef}
+  onScroll={handleScroll}
           variants={stagger}
           initial="hidden"
           whileInView="show"
@@ -107,6 +125,26 @@ export default function Growth() {
             </motion.div>
           ))}
         </motion.div>
+        <div className="justify-center items-center gap-2 mt-3 hidden md:flex lg:hidden">
+  {[0, 1].map((dot) => (
+    <div
+      key={dot}
+      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+        activeIndex === dot ? "bg-blue-500 scale-110" : "bg-gray-400"
+      }`}
+    />
+  ))}
+</div>
+<div className="flex justify-center items-center gap-2 mt-3 md:hidden">
+  {[0, 1, 2].map((dot) => (
+    <div
+      key={dot}
+      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+        activeIndex === dot ? "bg-blue-500 scale-110" : "bg-gray-400"
+      }`}
+    />
+  ))}
+</div>
         <motion.div
           variants={stagger}
           initial="hidden"

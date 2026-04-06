@@ -56,11 +56,11 @@ export default function Clarity() {
             Clarity replaced confusion.
           </span>
           <span className="text-4xl md:text-2xl lg:text-4xl">
-            The structure made the difference.
+            Structure made the difference
           </span>
 
           <span className="mt-4 text-2xl lg:text-2xl md:text-xl text-right opacity-80">
-            — Unknown
+            — Jwalant Swaroop
           </span>
         </motion.div>
 
