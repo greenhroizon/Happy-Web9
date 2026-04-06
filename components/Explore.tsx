@@ -59,7 +59,7 @@ export default function Explore() {
           whileInView="show"
           viewport={{ once: true }}
           variants={stagger}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-12 md:gap-x-6  xl:gap-y-6 xl:gap-x-6 max-w-[1000px] mx-auto w-full justify-items-center"
+          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-x-5 md:gap-x-6  xl:gap-y-6 xl:gap-x-6 max-w-[1000px] mx-auto w-full justify-items-center"
         >
           {programs.map((program:any, index:number) => (
             
@@ -72,7 +72,7 @@ export default function Explore() {
     setActiveIndex(activeIndex === index ? null : index)
   }
 >
-             <Card className="group relative w-full md:h-65 rounded-2xl border p-4 flex flex-col items-center justify-center text-center transition-all duration-300 bg-[#f3efe8] border-[#3d3020] overflow-hidden">
+             <Card className="group relative w-full h-35 md:h-65 rounded-2xl border p-4 flex flex-col items-center justify-center text-center transition-all duration-300 bg-[#f3efe8] border-[#3d3020] overflow-hidden">
 
   {/* Default Content */}
   <div
@@ -93,10 +93,11 @@ export default function Explore() {
         alt={program.title}
         width={130}
         height={130}
+        className="w-15 h-15 md:w-35 md:h-35"
       />
     </motion.div>
 
-    <span className="text-2xl whitespace-pre-line mt-2">
+    <span className="text-sm md:text-2xl whitespace-pre-line mt-2">
       {program.title}
     </span>
   </div>
@@ -104,18 +105,18 @@ export default function Explore() {
   {/* Hover Content */}
 <div
   className={`
-    absolute inset-0 bg-[#544120] flex flex-col items-center justify-center px-6
-    transition-all duration-300 gap-2
+    absolute inset-0 bg-[#544120] flex flex-col items-center justify-center px-2 md:px-6
+    transition-all duration-300 gap-2 md:gap-4
     xl:opacity-0 xl:group-hover:opacity-100
     ${activeIndex === index ? "opacity-100" : "opacity-0"}
   `}
 >
   
-  <span className="text-2xl whitespace-pre-line text-white">
+  <span className="text-sm md:text-2xl whitespace-pre-line text-white">
     {program.title}
   </span>
 
-  <p className="text-sm text-white">
+  <p className="text-[8px] md:text-sm text-white">
     {program.desc}
   </p>
 

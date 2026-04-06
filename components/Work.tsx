@@ -75,8 +75,8 @@ export default function Work() {
             </span>
           </div>
 
-          <div className="flex items-center justify-center">
-            <Button className="w-full md:w-60 lg:w-70 h-10 p-6 rounded-4xl bg-[#3f5c4a] text-[#c39e86] border-2 border-yellow-400 hover:bg-[#2d4435] transition-colors cursor-pointer text-sm">
+          <div className="flex items-center justify-center mt-5">
+            <Button className="w-50 md:w-60 lg:w-70 h-10 p-6 rounded-4xl bg-[#3f5c4a] text-[#c39e86] border-2 border-yellow-400 hover:bg-[#2d4435] transition-colors cursor-pointer text-[10px] md:text-sm">
               Book Corporate Consultation
             </Button>
           </div>
