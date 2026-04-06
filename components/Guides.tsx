@@ -24,7 +24,7 @@ export default function Guides() {
   };
 
   return (
-    <div className="max-w-[1920px] mx-auto pt-12 px-6 xl:p-16 pb-10">
+    <div id="guides-section" className="max-w-[1920px] mx-auto pt-12 px-6 xl:p-16 pb-10">
       <div className="flex flex-col">
         
         {/* Heading */}
