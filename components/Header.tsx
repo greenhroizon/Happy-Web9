@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <div className="pt-12 px-4 xl:p-8 z-50 mx-auto max-w-[1920px]">
       
-      <div className="bg-[#dcd8ce] p-2 rounded-full flex md:grid md:grid-cols-2 items-center">
+      <div className="bg-[#dcd8ce] rounded-full flex md:grid md:grid-cols-4 lg:grid-cols-5 items-center">
 
         {/* LOGO */}
         <div>
@@ -28,32 +28,28 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* NAV LINKS (desktop only)
+        {/* NAV LINKS (desktop only) */}
         <div className="col-span-2 lg:col-span-3 hidden md:flex gap-6 lg:gap-10 items-center justify-center text-sm lg:text-xl">
           <Link href="/AboutUs" className="cursor-pointer">About Us</Link>
           <Link href="/Programs" className="cursor-pointer">Programs</Link>
           <Link href="/Corporate" className="cursor-pointer">Corporate</Link>
           <Link href="/Resources" className="cursor-pointer">Resources</Link>
-        </div> */}
+        </div>
 
         {/* RIGHT SIDE */}
-        <div className="ml-auto">
+        <div className="ml-auto flex items-center pr-2">
 
           {/* DESKTOP BUTTON */}
-          {/* <Button className="hidden md:flex items-center justify-center bg-[#3f5c4a] hover:bg-[#162d22] cursor-pointer rounded-full text-sm lg:text-xl px-4 md:py-6 xl:px-8 xl:py-8">
+          <Button className="hidden md:flex items-center justify-center bg-[#3f5c4a] hover:bg-[#162d22] cursor-pointer rounded-full text-sm lg:text-xl px-4 md:py-6 xl:px-8 xl:py-8">
   Get Started
-</Button> */}
+</Button>
 
           {/* MOBILE MENU ICON */}
           <button
             onClick={() => setOpen(!open)}
-            className="ml-2 p-2 md:pr-6 xl:pr-10 cursor-pointer"
+            className="md:hidden ml-2 p-2"
           >
-          {open ? (
-  <X className="w-6 h-6 md:w-8 md:h-8 xl:w-10 xl:h-10" />
-) : (
-  <Menu className="w-6 h-6 md:w-8 md:h-8 xl:w-10 xl:h-10" />
-)}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -65,15 +61,15 @@ export default function Header() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-className="fixed inset-0 bg-[#dcd8ce] z-40 flex flex-col items-start justify-center md:justify-start md:p-16 px-8 gap-8 text-2xl"
+className="fixed inset-0 bg-[#dcd8ce] z-40 flex flex-col items-start justify-center px-8 gap-8 text-2xl"
     >
 
       {/* ❌ CLOSE BUTTON (TOP RIGHT) */}
       <button
         onClick={() => setOpen(false)}
-        className="absolute top-6 right-6 p-2 cursor-pointer"
+        className="absolute top-6 right-6 p-2"
       >
-        <X size={28} className="w-6 h-6 md:w-8 md:h-8 xl:w-10 xl:h-10" />
+        <X size={28} />
       </button>
 
       {/* MENU LINKS */}
