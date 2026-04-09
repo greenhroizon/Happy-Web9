@@ -105,7 +105,7 @@ export default function Growth() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="2xl:hidden flex overflow-x-auto px-4 mt-3 w-full scrollbar-hide justify-center"
+          className="xl:hidden flex overflow-x-auto px-4 mt-3 w-full scrollbar-hide"
           style={{ WebkitOverflowScrolling: "touch" }}
         >
           {["/1200.png", "/1201.png", "/1202.png"].map((img, i) => (
@@ -150,7 +150,7 @@ export default function Growth() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="hidden 2xl:flex flex-wrap gap-6 mt-3 w-full justify-center"
+          className="hidden xl:flex flex-wrap gap-6 mt-3 w-full justify-center"
         >
           {["/1200.png", "/1201.png", "/1202.png"].map((img, i) => (
             <motion.div
