@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <div className="pt-12 px-4 xl:p-8 z-50 mx-auto max-w-[1920px]">
       
-      <div className="bg-[#dcd8ce] p-2 rounded-full flex md:grid md:grid-cols-4 items-center">
+      <div className="bg-[#dcd8ce] p-2 rounded-full flex md:grid md:grid-cols-4 lg:grid-cols-5 items-center">
 
         {/* LOGO */}
         <div>
@@ -23,13 +23,13 @@ export default function Header() {
               alt="logo"
               width={70}
               height={70}
-              className="cursor-pointer"
+              className="w-13 h-13 md:w-15 md:h-15 xl:w-20 xl:h-20 cursor-pointer"
             />
           </Link>
         </div>
 
         {/* NAV LINKS (desktop only) */}
-        <div className="col-span-2 hidden md:flex gap-6 lg:gap-10 items-center justify-center text-sm lg:text-xl">
+        <div className="col-span-2 lg:col-span-3 hidden md:flex gap-6 lg:gap-10 items-center justify-center text-sm lg:text-xl">
           <Link href="/AboutUs" className="cursor-pointer">About Us</Link>
           <Link href="/Programs" className="cursor-pointer">Programs</Link>
           <Link href="/Corporate" className="cursor-pointer">Corporate</Link>
@@ -40,7 +40,7 @@ export default function Header() {
         <div className="ml-auto flex items-center">
 
           {/* DESKTOP BUTTON */}
-          <Button className="hidden md:flex items-center justify-center bg-[#3f5c4a] hover:bg-[#162d22] cursor-pointer rounded-full text-xl px-4 lg:px-8 py-8">
+          <Button className="hidden md:flex items-center justify-center bg-[#3f5c4a] hover:bg-[#162d22] cursor-pointer rounded-full text-sm lg:text-xl px-4 md:py-6 xl:px-8 xl:py-8">
   Get Started
 </Button>
 

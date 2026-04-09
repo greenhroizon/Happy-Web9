@@ -128,7 +128,7 @@ export default function Emotional() {
       <div className="flex flex-col gap-1 ">
                <motion.span
           variants={fadeUp}
-          className="text-sm md:text-4xl xl:text-5xl text-[#544120] font-canela font-normal pt-10"
+          className="text-lg md:text-4xl xl:text-5xl text-[#544120] font-canela pt-10"
         >
           You don’t have to navigate this alone.
         </motion.span>
@@ -148,7 +148,7 @@ export default function Emotional() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
         >
-          <Button className="mt-4 cursor-pointer w-[150px] md:w-[220px] bg-[#3f5c4a] hover:bg-[#344c3d] rounded-full py-5 px-6  md:py-5 lg:py-7 border-yellow-400 border-2 text-[10px] md:text-[12px]">
+          <Button className="cursor-pointer w-[150px] md:w-[220px] bg-[#3f5c4a] hover:bg-[#344c3d] rounded-full py-5 px-6  md:py-5 lg:py-7 border-yellow-400 border-2 text-[10px] md:text-[12px]">
             Book Discovery Session
           </Button>
         </motion.div>

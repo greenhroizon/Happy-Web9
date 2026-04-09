@@ -33,7 +33,7 @@ export default function Practice() {
         <Header />
 
         <div className="pt-16 px-4 md:p-10 xl:p-8">
-          <div className="flex flex-col md:gap-10 xl:gap-10">
+          <div className="flex flex-col md:gap-6 xl:gap-10">
 
             {/* Heading */}
             <motion.div
@@ -41,7 +41,7 @@ export default function Practice() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="flex flex-col md:gap-3 font-dm-serif"
+              className="flex flex-col md:gap-3 font-canela"
             >
               <motion.span
                 variants={fadeUp}
@@ -73,9 +73,9 @@ export default function Practice() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="flex flex-col gap-2 text-[#544120] text-[10px] sm:text-sm pt-8 lg:pt-0 md:text-xl xl:text-2xl items-center"
+              className="flex flex-col gap-2 text-[#544120] text-[10px] pt-4 sm:text-sm md:text-xl xl:text-2xl items-center"
             >
-              <span className="lg:grid lg:grid-cols-8 ml-8">
+              <span className="lg:grid lg:grid-cols-8 ml-8 min-[375px]:ml-12 min-[425px]:ml-19">
                 <span></span>
                 <motion.span
                   variants={fadeUp}
@@ -91,7 +91,7 @@ export default function Practice() {
                 </motion.span>
               </span>
 
-              <span className="md:grid md:grid-cols-3 ml-15 md:ml-45">
+              <span className="md:grid md:grid-cols-3 ml-15 md:ml-45 min-[375px]:ml-18 min-[425px]:ml-25">
                 <span className="hidden md:block"></span>
                 <motion.span
                   variants={fadeUp}

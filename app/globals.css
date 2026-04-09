@@ -47,15 +47,15 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 @font-face {
-  font-family: "DMSerifDisplay";
-  src: url("/fonts/DMSerifDisplay-Regular.ttf") format("truetype");
+  font-family: "Canela";
+  src: url("/fonts/Canela-Regular-Trial.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-.font-dm-serif {
-  font-family: "DMSerifDisplay", serif;
+.font-canela {
+  font-family: "Canela", serif;
 }
 
 * {
