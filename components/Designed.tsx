@@ -251,7 +251,7 @@ const handleScroll = () => {
                 <Image src="/6.png" alt="" width={200} height={200} />
               </motion.div>
 
-              <div className="flex flex-col gap-4 text-[#c39e86] mt-4">
+              <div className="flex flex-col gap-4 text-[#e9dac9] mt-4">
                 <strong className="text-2xl sm:text-2xl lg:text-4xl">
                   For Individuals
                 </strong>

@@ -196,7 +196,7 @@ export default function ProgramsGrid() {
             variants={cardVariants}
           >
         <Card className="bg-[#3f5c4a] border-yellow-400 border-2 text-[#f3efe8] w-full lg:w-70 h-65 rounded-4xl px-5 pt-6 justify-center">
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 text-[#9ead8c]">
              <div className="text-lg">
               {programs[4].title}
             </div>
@@ -204,7 +204,7 @@ export default function ProgramsGrid() {
               {programs[4].desc}
             </div>
             <div className="flex gap-3">
-              <Button className="bg-[#cfd6d0] w-35 rounded-4xl text-[10px]">{programs[4].tags[0]}</Button>
+              <Button className="bg-[#f3efe8] w-35 text-[#f3efe8] rounded-4xl text-[10px]">{programs[4].tags[0]}</Button>
             </div>
           </div>
         </Card>

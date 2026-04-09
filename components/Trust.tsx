@@ -41,7 +41,7 @@ export default function Trust() {
     "/b4.png",
   ];
   return (
-    <div className="bg-[#dcd8ce] p-6 xl:p-16 mx-auto max-w-[1950px]">
+    <div className="bg-[#dcd8ce] p-6 xl:p-8 mx-auto max-w-[1950px]">
       <div className="flex flex-col mx-auto max-w-[1950px] gap-6">
         
         {/* Heading */}
@@ -66,7 +66,7 @@ export default function Trust() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 xl:gap-6 place-items-center pt-10 w-fit mx-auto"
+          className="hidden md:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 xl:gap-6 place-items-center pt-8 w-fit mx-auto"
         >
           {[
             "/b8.png",
@@ -83,14 +83,14 @@ export default function Trust() {
               variants={item}
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 200 }}
-              className="flex items-center justify-center h-[100px] mt-15 2xl:mt-30"
+              className="flex items-center justify-center h-[100px] 2xl:mt-30"
             >
               <Image
                 src={src}
                 alt="logo"
                 width={150}
                 height={120}
-                className="object-contain w-45"
+                className="object-contain w-30"
               />
             </motion.div>
           ))}
