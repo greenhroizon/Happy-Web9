@@ -145,21 +145,21 @@ const [activeIndex, setActiveIndex] = useState(0);
   initial="hidden"
   whileInView="show"
   viewport={{ once: true }}
-  className="xl:hidden flex overflow-x-auto gap-3 mt-3 w-full h-fit scrollbar-hide snap-x snap-mandatory"
+  className="flex overflow-x-auto xl:overflow-x-visible xl:grid xl:grid-cols-3 gap-3 xl:gap-6 mt-3 w-full scrollbar-hide snap-x snap-mandatory xl:snap-none"
 >
-  {["/58.png", "/59.png", "/60.png"].map((img, i) => (
+  {["/2000.png", "/2001.png", "/2002.png"].map((img, i) => (
     <motion.div
       key={i}
       variants={fadeUp}
       whileTap={{ scale: 0.97 }}
-      className="min-w-[300px] sm:min-w-[320px] flex-shrink-0 snap-center"
+      whileHover={{ scale: 1.03 }}
+      className="min-w-[85vw] sm:min-w-[60vw] md:min-w-[45vw] xl:min-w-0 flex-shrink-0 xl:flex-shrink xl:w-full snap-center xl:snap-align-none relative aspect-[3/4]"
     >
       <Image
         src={img}
         alt=""
-        width={320}
-        height={360}
-        className="w-full h-90 object-cover rounded-4xl"
+        fill
+        className="object-contain rounded-4xl"
       />
     </motion.div>
   ))}
@@ -184,32 +184,30 @@ const [activeIndex, setActiveIndex] = useState(0);
     />
   ))}
 </div>
-<motion.div
+{/* <motion.div
   variants={stagger}
   initial="hidden"
   whileInView="show"
   viewport={{ once: true }}
-  className="hidden xl:grid grid-cols-3 gap-6 mt-3 w-full"
+  className="hidden xl:grid grid-cols-3 gap-6 mt-3 w-full justify-center"
 >
-  {["/58.png", "/59.png", "/60.png"].map((img, i) => (
+  {["/card1.png", "/card2.png", "/card3.png"].map((img, i) => (
     <motion.div
       key={i}
       variants={fadeUp}
       whileTap={{ scale: 0.97 }}
       whileHover={{ scale: 1.03 }}
-      className="w-full"
+      className="relative w-full aspect-[3/4]"
     >
       <Image
         src={img}
         alt=""
-        width={320}
-        height={360}
-        className="w-full h-[600px] 2xl:h-[700px] object-cover rounded-4xl"
+        fill
+        className="object-contain rounded-4xl"
       />
     </motion.div>
   ))}
-</motion.div>
-
+</motion.div> */}
         {/* ================= Therapy Formats ================= */}
         <motion.div
           variants={fadeUp}
