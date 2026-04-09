@@ -147,7 +147,7 @@ const [activeIndex, setActiveIndex] = useState(0);
   viewport={{ once: true }}
   className="xl:hidden flex overflow-x-auto gap-3 mt-3 w-full h-fit scrollbar-hide snap-x snap-mandatory"
 >
-  {["/700.png", "/701.png", "/702.png"].map((img, i) => (
+  {["/58.png", "/59.png", "/60.png"].map((img, i) => (
     <motion.div
       key={i}
       variants={fadeUp}
@@ -189,27 +189,26 @@ const [activeIndex, setActiveIndex] = useState(0);
   initial="hidden"
   whileInView="show"
   viewport={{ once: true }}
-  className="hidden xl:flex flex-wrap justify-center gap-3 mt-3 w-full h-fit"
+  className="hidden xl:grid grid-cols-3 gap-6 mt-3 w-full"
 >
-  {["/700.png", "/701.png", "/702.png"].map((img, i) => (
+  {["/58.png", "/59.png", "/60.png"].map((img, i) => (
     <motion.div
       key={i}
       variants={fadeUp}
       whileTap={{ scale: 0.97 }}
       whileHover={{ scale: 1.03 }}
-      className="w-full sm:w-[48%] lg:w-[30%]"
+      className="w-full"
     >
       <Image
         src={img}
         alt=""
         width={320}
         height={360}
-        className="w-full h-110 2xl:h-150 object-cover rounded-4xl"
+        className="w-full h-[600px] 2xl:h-[700px] object-cover rounded-4xl"
       />
     </motion.div>
   ))}
 </motion.div>
-
 
         {/* ================= Therapy Formats ================= */}
         <motion.div

@@ -15,11 +15,11 @@ export default function Practice() {
   };
 
   return (
-    <div className="relative z-10 mx-auto max-w-[1920px] pb-20">
+    <div className="relative z-10 mx-auto max-w-[1920px] pb-20 h-min-screen">
       
       {/* Background image */}
          <div className="absolute inset-0">
-           <img src="/homebackground-image.png" className="w-full h-full object-cover rounded-b-[40px] xl:rounded-b-[80px]" />
+           <img src="/Assets1.png" className="w-full h-full object-cover object-center rounded-b-[40px] xl:rounded-b-[80px]" />
            
         {/* <img
           src="/homebackground-image.png"
@@ -41,7 +41,7 @@ export default function Practice() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="flex flex-col md:gap-3 font-canela font-normal"
+              className="flex flex-col md:gap-3 font-dm-serif"
             >
               <motion.span
                 variants={fadeUp}

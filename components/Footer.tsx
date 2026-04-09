@@ -75,7 +75,7 @@ export default function Footer() {
           {/* Content & Learning */}
           <motion.div className="flex flex-col gap-2 mt-10 md:mt-0" variants={fadeUp}>
             <span>
-              <strong className="text-[#544120] text-sm lg:text-xl">Content & Learning</strong>
+              <strong className="text-[#544120] text-sm lg:text-xl">Resources</strong>
             </span>
             <div className="flex flex-col text-[#544120] text-[13px] lg:text-lg">
               <span><Link href="/Blog" className="cursor-pointer">Blog</Link></span>

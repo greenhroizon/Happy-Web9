@@ -21,26 +21,26 @@ export default function Header() {
             <Image
               src="/footerImage.png"
               alt="logo"
-              width={60}
-              height={60}
+              width={70}
+              height={70}
               className="cursor-pointer"
             />
           </Link>
         </div>
 
         {/* NAV LINKS (desktop only) */}
-        <div className="col-span-2 hidden md:flex gap-6 lg:gap-10 items-center justify-center text-sm lg:text-lg">
+        <div className="col-span-2 hidden md:flex gap-6 lg:gap-10 items-center justify-center text-sm lg:text-xl">
           <Link href="/AboutUs" className="cursor-pointer">About Us</Link>
           <Link href="/Programs" className="cursor-pointer">Programs</Link>
           <Link href="/Corporate" className="cursor-pointer">Corporate</Link>
-          <Link href="/Blog" className="cursor-pointer">Blog</Link>
+          <Link href="/Blog" className="cursor-pointer">Resources</Link>
         </div>
 
         {/* RIGHT SIDE */}
         <div className="ml-auto flex items-center">
 
           {/* DESKTOP BUTTON */}
-          <Button className="hidden md:flex items-center justify-center bg-[#3f5c4a] hover:bg-[#162d22] cursor-pointer rounded-full text-lg px-4 lg:px-8 py-6">
+          <Button className="hidden md:flex items-center justify-center bg-[#3f5c4a] hover:bg-[#162d22] cursor-pointer rounded-full text-xl px-4 lg:px-8 py-8">
   Get Started
 </Button>
 
