@@ -208,7 +208,7 @@ const handleScroll = () => {
           </span>
         </motion.div>
 
-        <motion.div 
+        {/* <motion.div 
             variants={stagger}
           initial="hidden"
           whileInView="show"
@@ -229,14 +229,14 @@ const handleScroll = () => {
           
           />
           </Link>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 mt-3"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-3"
         >
 
           {/* Card 1 */}
