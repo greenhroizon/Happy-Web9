@@ -66,7 +66,7 @@ export default function FooterSmall() {
 
         {/* Content & Learning */}
         <motion.div className="flex flex-col gap-2" variants={fadeUp}>
-          <strong className="text-[#544120] text-[13px]">Resources</strong>
+          <strong className="text-[#544120] text-sm">Resources</strong>
           <div className="flex flex-col text-[#544120] text-[13px]">
                    <span><Link href="/Resources" className="cursor-pointer">Blog</Link></span>
             <span>Videos / Reels</span>
