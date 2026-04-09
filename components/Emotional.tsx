@@ -43,7 +43,7 @@ export default function Emotional() {
 
 
   return (
-    <div className="mx-auto max-w-[1920px] p-6 md:p-8">
+    <div className="mx-auto max-w-[1920px] p-4 pt-8">
       <motion.div
         variants={container}
         initial="hidden"
@@ -128,14 +128,14 @@ export default function Emotional() {
       <div className="flex flex-col gap-1 md:gap-3">
                <motion.span
           variants={fadeUp}
-          className="text-lg md:text-4xl xl:text-5xl text-[#7a5c42] font-canela pt-10"
+          className="text-2xl md:text-4xl xl:text-5xl text-[#7a5c42] font-canela pt-10"
         >
           You don’t have to navigate this alone.
         </motion.span>
 
         <motion.span
           variants={fadeUp}
-          className="text-[10px] md:text-2xl xl:text-3xl text-[#b56e41]"
+          className="text-[12px] md:text-2xl xl:text-3xl text-[#b56e41]"
         >
           Start building emotional resilience today.
         </motion.span>
