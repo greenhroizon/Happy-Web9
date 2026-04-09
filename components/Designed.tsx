@@ -19,14 +19,10 @@ const [activeIndex, setActiveIndex] = useState(0);
   ];
 
 
-  const handleScroll = () => {
+const handleScroll = () => {
   if (!scrollRef.current) return;
-
-  const scrollLeft = scrollRef.current.scrollLeft;
-  const cardWidth = scrollRef.current.offsetWidth; // visible width
-
-  const index = Math.round(scrollLeft / cardWidth);
-  setActiveIndex(index);
+  const { scrollLeft, offsetWidth } = scrollRef.current;
+  setActiveIndex(Math.round(scrollLeft / offsetWidth));
 };
 
   /* ================= Animations ================= */
@@ -145,35 +141,26 @@ const [activeIndex, setActiveIndex] = useState(0);
   initial="hidden"
   whileInView="show"
   viewport={{ once: true }}
-  className="flex overflow-x-auto xl:overflow-x-visible xl:grid xl:grid-cols-3 gap-3 xl:gap-6 mt-3 w-full scrollbar-hide snap-x snap-mandatory xl:snap-none"
+  className="flex overflow-x-auto xl:overflow-x-visible md:grid md:grid-cols-3 md:gap-6 xl:w-fit mt-3 w-full scrollbar-hide snap-x snap-mandatory md:snap-none"
 >
   {["/2000.png", "/2001.png", "/2002.png"].map((img, i) => (
     <motion.div
-      key={i}
-      variants={fadeUp}
-      whileTap={{ scale: 0.97 }}
-      whileHover={{ scale: 1.03 }}
-      className="min-w-[85vw] sm:min-w-[60vw] md:min-w-[45vw] xl:min-w-0 flex-shrink-0 xl:flex-shrink xl:w-full snap-center xl:snap-align-none relative aspect-[3/4]"
-    >
-      <Image
-        src={img}
-        alt=""
-        fill
-        className="object-contain rounded-4xl"
-      />
-    </motion.div>
+  key={i}
+  variants={fadeUp}
+  whileTap={{ scale: 0.97 }}
+  whileHover={{ scale: 1.03 }}
+  className="min-w-full sm:min-w-full md:min-w-0 flex-shrink-0 xl:flex-shrink md:w-full snap-center md:snap-align-none"
+>
+  <Image
+    src={img}
+    alt=""
+    width={400}
+    height={300}
+    className="w-full md:h-[250px] lg:h-[350px] object-contain rounded-3xl"
+  />
+</motion.div>
   ))}
 </motion.div>
-<div className="justify-center items-center gap-2 mt-3 hidden md:flex lg:hidden">
-  {[0, 1].map((dot) => (
-    <div
-      key={dot}
-      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-        activeIndex === dot ? "bg-blue-500 scale-110" : "bg-gray-400"
-      }`}
-    />
-  ))}
-</div>
 <div className="flex justify-center items-center gap-2 mt-3 md:hidden">
   {[0, 1, 2].map((dot) => (
     <div
