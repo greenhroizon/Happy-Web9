@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Header from "./Header";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
@@ -124,8 +125,11 @@ export default function Practice() {
               </div>
 
               <div>
+       
                 <Button className="border-black cursor-pointer hover:text-white hover:bg-[#978059] bg-transparent text-black px-4 py-2 text-[10px] md:px-10 md:py-6 md:text-lg rounded-full">
+                  <Link href="/Programs" className="cursor-pointer">
                   Explore Services
+                  </Link>
                 </Button>
               </div>
             </motion.div>

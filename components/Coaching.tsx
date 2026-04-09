@@ -54,9 +54,9 @@ const [activeIndex, setActiveIndex] = useState(0);
       >
         <motion.span
           variants={fadeUp}
-          className="text-center text-xl md:text-3xl xl:text-5xl font-canela font-normal"
+          className="text-center text-2xl md:text-3xl xl:text-5xl font-canela font-normal"
         >
-          Programs designed for emotional clarity and growth
+          Programs designed for emotional <br className="block md:hidden"/>clarity and growth
         </motion.span>
 
         <motion.span

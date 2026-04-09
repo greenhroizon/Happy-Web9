@@ -41,7 +41,7 @@ export default function Trust() {
     "/b4.png",
   ];
   return (
-    <div className="bg-[#dcd8ce] p-6 xl:p-8 mx-auto max-w-[1950px]">
+    <div className="bg-[#dcd8ce] p-1 xl:p-8 mx-auto max-w-[1950px]">
       <div className="flex flex-col mx-auto max-w-[1950px] gap-6">
         
         {/* Heading */}
