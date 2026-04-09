@@ -55,7 +55,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="pt-8 px-4 xl:p-16 mx-auto max-w-[1920px]">
+    <div className="pt-8 px-4 xl:p-16 xl:px-40 mx-auto max-w-[1920px]">
       <div className="flex flex-col gap-10">
 
         {/* ================= Heading ================= */}
@@ -69,7 +69,7 @@ export default function FAQ() {
           <p className="text-xl md:text-3xl xl:text-3xl text-[#c39e86]">
             Frequently Asked Questions
           </p>
-          <h2 className="text-xl md:text-3xl xl:text-5xl mt-2 font-canela">
+          <h2 className="text-xl md:text-3xl xl:text-4xl mt-2 font-canela">
             Clarity Before You Begin
           </h2>
         </motion.div>
@@ -93,7 +93,7 @@ export default function FAQ() {
                 {/* Question */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full text-left text-lg md:text-2xl 2xl:text-3xl font-medium flex justify-between items-center"
+                  className="w-full text-left text-lg md:text-2xl 2xl:text-3xl flex justify-between items-center"
                 >
                   {faq.question}
 

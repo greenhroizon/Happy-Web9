@@ -33,7 +33,7 @@ export default function Header() {
           <Link href="/AboutUs" className="cursor-pointer">About Us</Link>
           <Link href="/Programs" className="cursor-pointer">Programs</Link>
           <Link href="/Corporate" className="cursor-pointer">Corporate</Link>
-          <Link href="/Blog" className="cursor-pointer">Resources</Link>
+          <Link href="/Resources" className="cursor-pointer">Resources</Link>
         </div>
 
         {/* RIGHT SIDE */}
@@ -77,7 +77,7 @@ className="fixed inset-0 bg-[#dcd8ce] z-40 flex flex-col items-start justify-cen
       <Link href="/AboutUs" onClick={() => setOpen(false)}>About Us</Link>
       <Link href="/Programs" onClick={() => setOpen(false)}>Programs</Link>
       <Link href="/Corporate" onClick={() => setOpen(false)}>Corporate</Link>
-      <Link href="/Blog" onClick={() => setOpen(false)}>Blog</Link>
+      <Link href="/Resources" onClick={() => setOpen(false)}>Blog</Link>
 
       {/* CTA */}
       <Button className="bg-[#3f5c4a] text-white px-8 py-6 rounded-full">

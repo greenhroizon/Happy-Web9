@@ -78,7 +78,7 @@ export default function Footer() {
               <strong className="text-[#544120] text-sm lg:text-xl">Resources</strong>
             </span>
             <div className="flex flex-col text-[#544120] text-[13px] lg:text-lg">
-              <span><Link href="/Blog" className="cursor-pointer">Blog</Link></span>
+              <span><Link href="/Resources" className="cursor-pointer">Blog</Link></span>
               <span>Videos / Reels</span>
             </div>
           </motion.div>
