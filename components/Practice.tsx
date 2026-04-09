@@ -73,7 +73,7 @@ export default function Practice() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="flex flex-col gap-2 text-[#544120] text-[10px] pt-4 sm:text-sm md:text-xl xl:text-2xl items-center"
+              className="flex flex-col gap-2 text-[#736345] text-[10px] pt-4 sm:text-sm md:text-xl xl:text-2xl items-center"
             >
               <span className="lg:grid lg:grid-cols-8 ml-8 min-[375px]:ml-12 min-[425px]:ml-16">
                 <span></span>

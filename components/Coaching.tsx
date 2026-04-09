@@ -61,7 +61,7 @@ const [activeIndex, setActiveIndex] = useState(0);
 
         <motion.span
           variants={fadeUp}
-          className="text-center text-[10px] md:text-sm xl:text-xl text-[#c39e86]"
+          className="text-center text-[10px] md:text-sm xl:text-xl text-[#736345]"
         >
           Happy Ho offers a range of coaching, meditation, counselling, and healing programs
           <br className="md:block hidden"/>

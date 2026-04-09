@@ -67,7 +67,7 @@ export default function Wellness() {
             {/* Description */}
             <motion.span
               variants={fadeUp}
-              className="text-sm md:text-lg lg:text-xl xl:text-2xl text-[#7d4545]"
+              className="text-sm md:text-lg lg:text-xl xl:text-2xl text-[#736345]"
             >
               Happy Ho corporate programs help organizations
               <br className="hidden md:block" /> improve employee well-being,

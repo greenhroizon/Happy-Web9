@@ -85,7 +85,7 @@ export default function Founder() {
               <motion.p
                 key={i}
                 variants={fadeUp}
-                className="text-sm xl:text-lg text-[#7d4545]"
+                className="text-sm xl:text-lg text-[#736345]"
               >
                 {para}
               </motion.p>
