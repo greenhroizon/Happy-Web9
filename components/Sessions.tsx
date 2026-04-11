@@ -16,7 +16,7 @@ export default function Sessions() {
 
   return (
     <motion.div
-      className="p-6 xl:p-16"
+      className="p-6 xl:p-10"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
@@ -31,14 +31,14 @@ export default function Sessions() {
             Pre-Curated Corporate Wellness Sessions
           </motion.span>
           <motion.span
-            className="text-center text-sm md:text-xl xl:text-xl text-[#7d4545]"
+            className="text-center text-sm md:text-xl xl:text-xl text-[#736345]"
             variants={fadeUp}
           >
             Experiential emotional wellness workshops designed for corporate teams.
           </motion.span>
 
           <motion.div
-            className="flex flex-col md:flex-row justify-center pt-2 gap-3 md:gap-20 text-[#7d4545]"
+            className="flex flex-col md:flex-row justify-center pt-2 gap-3 md:gap-20 text-[#736345]"
             variants={fadeUp}
           >
             <span>
@@ -63,24 +63,6 @@ export default function Sessions() {
             </span>
           </motion.div>
         </div>
-
-        <motion.div
-          className="flex flex-col xl:flex xl:flex-row justify-center gap-6"
-          variants={fadeUp}
-        >
-        <Button className="px-20 py-6 rounded-full bg-[#544120] text-white border-2 border-yellow-400 self-center">
-  All Programs
-</Button>
-<Button className="hidden md:flex items-center justify-center text-lg py-6 px-10 rounded-full bg-[#f3efe8] text-[#7d4545] border-2 border-[#544120] gap-4 whitespace-nowrap w-fit self-center">
-  <span>Leadership</span>
-  <span>|</span>
-  <span>Employee Wellness</span>
-  <span>|</span>
-  <span>HR Programs</span>
-  <span>|</span>
-  <span>Sales Teams</span>
-</Button>
-        </motion.div>
       </div>
     </motion.div>
   );
