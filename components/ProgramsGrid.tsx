@@ -517,14 +517,14 @@ export default function ProgramsGrid() {
     {/* Content */}
     <div className="relative z-10 flex flex-col gap-5 px-3 pt-2 text-[#9EAD8C]">
       <div className="text-lg">
-        Managing <br/>  Success
+        Managing Success
       </div>
 
       <div className="text-sm">
         {programs[6].desc}
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex gap-3 mt-7">
   <Button className="bg-[#F3EFE8]/40 w-37 rounded-4xl text-[10px] text-[#F3EFE8]">
     {programs[6].tags[0]}
   </Button>
@@ -634,7 +634,7 @@ export default function ProgramsGrid() {
     {/* Content */}
     <div className="relative z-10 flex flex-col gap-5 px-3 pt-2 text-[#736345]">
       <div className="text-lg">
-        {programs[9].title}
+       Connecting with the <br/>New-Age Employee
       </div>
 
       <div className="text-sm">
@@ -743,12 +743,12 @@ export default function ProgramsGrid() {
     <div
       className="absolute inset-0 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/Card_SalesTeam.png')",
+        backgroundImage: "url('/Card_HRPrograms.png')",
       }}
     />
 
     {/* Content */}
-    <div className="relative z-10 flex flex-col gap-5 px-3 pt-2 text-[#E9DAC9]">
+    <div className="relative z-10 flex flex-col gap-5 px-3 pt-2 text-[#736345]">
       <div className="text-lg">
         {programs[12].title}
       </div>
@@ -757,8 +757,8 @@ export default function ProgramsGrid() {
         {programs[12].desc}
       </div>
 
-      <div className="flex gap-3">
-  <Button className="bg-[rgba(243,239,232,0.4)] w-34 rounded-4xl text-[10px] text-[#F3EFE8] mt-5">
+      <div className="flex gap-3 mt-5">
+  <Button className="bg-[rgba(243,239,232,0.7)] w-30 rounded-4xl text-[10px] text-[#736345]">
     {programs[12].tags[0]}
   </Button>
 </div>
@@ -766,6 +766,7 @@ export default function ProgramsGrid() {
 
   </Card>
 </motion.div>)}
+
  {visible(13) && (
  <motion.div
   className="w-full max-w-[320px]"

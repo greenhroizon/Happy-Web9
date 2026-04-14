@@ -19,27 +19,19 @@ export default function Blog(){
         </div>
         <Featured/>
         <Articles/>
-        <Published/>
-
-             <div className="hidden md:block">
-                  <Footer/>
-              </div>
-                <div className="block md:hidden">
-                  <FooterSmall/>
-              </div>
         {/* Step section */}
-        {/* <div className="relative z-0">
-          <Discover/>
-        </div> */}
+        <div className="relative z-0">
+           <Published/>
+        </div>
         {/* Overlapping Footer */}
-        {/* <div className="relative z-20 -mt-10 md:-mt-15 xl:-mt-20">
+        <div className="relative z-20 -mt-10 md:-mt-15 xl:-mt-30">
            <div className="hidden md:block">
                   <Footer/>
               </div>
                 <div className="block md:hidden">
                   <FooterSmall/>
               </div>
-        </div> */}
+        </div>
         </>
     );
 }

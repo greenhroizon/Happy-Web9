@@ -52,16 +52,16 @@ export default function Trust() {
           viewport={{ once: true }}
           className="flex flex-col gap-4"
         >
-          <span className="text-center text-xl xl:text-6xl font-canela font-normal">
+          <span className="text-center text-xl xl:text-5xl font-canela font-normal">
             Trusted by Corporate Organizations
           </span>
-          <span className="text-center text-sm xl:text-xl text-[#978059] ">
+          <span className="text-center text-sm xl:text-lg text-[#978059] ">
             Our corporate clients range from Public Sector Undertakings to IT companies.
           </span>
         </motion.div>
 
 
-         <motion.div
+         {/* <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -94,10 +94,10 @@ export default function Trust() {
               />
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Logos Grid */}
-    <motion.div variants={fadeUp} className="w-full space-y-6 md:space-y-8 block md:hidden ">
+    <motion.div variants={fadeUp} className="w-full space-y-6 md:space-y-8">
       {/* Row 1 */}
       <div className="overflow-hidden w-full">
         <motion.div
