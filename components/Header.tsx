@@ -77,7 +77,7 @@ className="fixed inset-0 bg-[#dcd8ce] z-40 flex flex-col items-start justify-cen
       <Link href="/AboutUs" onClick={() => setOpen(false)}>About Us</Link>
       <Link href="/Programs" onClick={() => setOpen(false)}>Programs</Link>
       <Link href="/Corporate" onClick={() => setOpen(false)}>Corporate</Link>
-      <Link href="/Resources" onClick={() => setOpen(false)}>Blog</Link>
+      <Link href="/Resources" onClick={() => setOpen(false)}>Resources</Link>
 
       {/* CTA */}
       <Button className="bg-[#3f5c4a] text-white px-8 py-6 rounded-full">

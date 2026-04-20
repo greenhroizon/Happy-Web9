@@ -23,7 +23,7 @@ export default function Happy() {
   };
 
   return (
-    <div className="bg-[#3f5c4a] p-8 mt-8 mx-auto max-w-[1920px]">
+    <div className="bg-[#3f5c4a] p-4 mt-8 mx-auto max-w-[1920px]">
       
       <motion.div
         variants={container}
@@ -36,13 +36,13 @@ export default function Happy() {
         {/* Heading */}
         <motion.div
           variants={fadeUp}
-          className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-[#9ead8c] font-canela"
+          className="text-xl md:text-3xl lg:text-4xl xl:text-5xl text-[#9ead8c] font-canela"
         >
           What makes Happy Ho different
         </motion.div>
 
         {/* Paragraph lines */}
-       <motion.div className="flex flex-col text-lg md:text-2xl text-left md:text-center">
+       <motion.div className="flex flex-col text-sm md:text-2xl text-left md:text-center">
         <motion.span variants={fadeUp}>
           Many wellness platforms offer inspiration or quick advice.<br className="lg:block hidden"/>
           Happy Ho focuses on building sustainable habits that help<br className="lg:block hidden"/>
