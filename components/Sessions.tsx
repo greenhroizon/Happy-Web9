@@ -66,8 +66,8 @@ export default function Sessions() {
 
   {/* Item 1 */}
   <div className="flex flex-col items-center gap-3">
-    <div className="bg-white p-4 rounded-full shadow-sm">
-      <img src="/corporate1.png" className="w-18 h-18 object-contain" />
+    <div className="rounded-full shadow-sm">
+      <img src="/corporate-2-1.svg" className="w-20 h-20 object-contain" />
     </div>
     <span className="text-[11px] text-[#544120] leading-tight">
       Mindfulness <br/>practices
@@ -76,8 +76,8 @@ export default function Sessions() {
 
   {/* Item 2 */}
   <div className="flex flex-col items-center gap-3">
-    <div className="bg-white p-4 rounded-full shadow-sm">
-      <img src="/corporate2.png" className="w-18 h-18 object-contain" />
+    <div className="rounded-full shadow-sm">
+      <img src="/corporate-2-2.svg" className="w-20 h-20 object-contain" />
     </div>
     <span className="text-[11px] text-[#544120] leading-tight">
       NLP<br/>Techniques
@@ -86,8 +86,8 @@ export default function Sessions() {
 
   {/* Item 3 */}
   <div className="flex flex-col items-center gap-3">
-    <div className="bg-white p-4 rounded-full shadow-sm">
-      <img src="/corporate3.png" className="w-18 h-18 object-contain" />
+    <div className="rounded-full shadow-sm">
+      <img src="/corporate-2-3.svg" className="w-20 h-20 object-contain" />
     </div>
     <span className="text-[11px] text-[#544120] leading-tight">
       Meditation
@@ -96,8 +96,8 @@ export default function Sessions() {
 
   {/* Item 4 */}
   <div className="flex flex-col items-center gap-3">
-    <div className="bg-white p-4 rounded-full shadow-sm">
-      <img src="/corporate4.png" className="w-18 h-18 object-contain" />
+    <div className="rounded-full shadow-sm">
+      <img src="/corporate-2-4.svg" className="w-20 h-20 object-contain" />
     </div>
     <span className="text-[11px] text-[#544120] leading-tight">
       Positive <br/>Psychology
@@ -106,8 +106,8 @@ export default function Sessions() {
 
   {/* Item 5 */}
   <div className="flex flex-col items-center gap-3">
-    <div className="bg-white p-4 rounded-full shadow-sm">
-      <img src="/corporate5.png" className="w-18 h-18 object-contain" />
+    <div className="rounded-full shadow-sm">
+      <img src="/corporate-2-5.svg" className="w-20 h-20 object-contain" />
     </div>
     <span className="text-[11px] text-[#544120] leading-tight">
       Behavioural <br/>Interventions
@@ -142,13 +142,13 @@ export default function Sessions() {
   md:grid-cols-2 
   lg:grid-cols-2 
   xl:grid-cols-3 
-  gap-8 text-center w-fit max-w-xl mx-auto"
+  gap-2 text-center w-fit max-w-xl mx-auto"
 >
 
   {/* Item 1 */}
   <div className="flex flex-col items-center gap-3">
-    <div className="bg-white p-4 rounded-full shadow-sm">
-      <img src="/corporate6.png" className="w-18 h-18 object-contain" />
+    <div className="rounded-full shadow-sm">
+      <img src="/corporate-2-6.svg" className="w-20 h-20 object-contain" />
     </div>
     <span className="text-[11px] text-[#544120] leading-tight">
       <span className="font-semibold">4 - 5 hours</span><br/>Immersive Workshop
@@ -157,8 +157,8 @@ export default function Sessions() {
 
   {/* Item 2 */}
   <div className="flex flex-col items-center gap-3">
-    <div className="bg-white p-4 rounded-full shadow-sm">
-      <img src="/corporate7.png" className="w-18 h-18 object-contain" />
+    <div className="rounded-full shadow-sm">
+      <img src="/corporate-2-7.svg" className="w-20 h-20 object-contain" />
     </div>
     <span className="text-[11px] text-[#544120] leading-tight">
       <span className="font-semibold">30 - 35</span>
@@ -169,8 +169,8 @@ export default function Sessions() {
 
   {/* Item 3 */}
   <div className="flex flex-col items-center gap-3">
-    <div className="bg-white p-4 rounded-full shadow-sm">
-      <img src="/corporate8.png" className="w-18 h-18 object-contain" />
+    <div className="rounded-full shadow-sm">
+      <img src="/corporate-2-8.svg" className="w-20 h-20 object-contain" />
     </div>
     <span className="text-[11px] text-[#544120] leading-tight">
       <span className="font-semibold">Interactive</span>

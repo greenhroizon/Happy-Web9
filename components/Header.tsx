@@ -118,7 +118,10 @@ export default function Header() {
 
           {/* DESKTOP BUTTON */}
           <Button className="hidden md:flex items-center justify-center bg-[#3f5c4a] hover:bg-[#162d22] cursor-pointer rounded-full text-sm lg:text-xl px-4 md:py-6 xl:px-8 xl:py-8">
-  Get Started
+              <Link href="/Payment" className="cursor-pointer">
+      Get Started
+    </Link>
+
 </Button>
 
           {/* MOBILE MENU ICON */}
