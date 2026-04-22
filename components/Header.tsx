@@ -203,7 +203,9 @@ className="fixed inset-0 bg-[#dcd8ce] z-40 flex flex-col items-start justify-cen
 
       {/* CTA */}
       <Button className="bg-[#3f5c4a] text-white px-8 py-6 rounded-full">
-        Get Started
+        <Link href="/Payment" className="cursor-pointer">
+      Get Started
+    </Link>
       </Button>
 
     </motion.div>
