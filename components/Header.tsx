@@ -51,17 +51,22 @@ export default function Header() {
       <div className="bg-[#dcd8ce] rounded-full flex md:grid md:grid-cols-4 lg:grid-cols-5 items-center shadow-xl">
 
         {/* LOGO */}
-        <div>
-          <Link href="/">
-            <Image
-              src="/footerImage.png"
-              alt="logo"
-              width={70}
-              height={70}
-              className="w-13 h-13 md:w-15 md:h-15 xl:w-20 xl:h-20 cursor-pointer"
-            />
-          </Link>
-        </div>
+        <div className="relative inline-block">
+  <Link href="/">
+    <Image
+      src="/footerImage.png"
+      alt="logo"
+      width={70}
+      height={70}
+      className="w-13 h-13 md:w-15 md:h-15 xl:w-20 xl:h-20 cursor-pointer"
+    />
+  </Link>
+
+  {/* ® symbol */}
+  <span className="absolute top-4 -right-2 md:right-30 lg:right-33 xl:right-50 translate-x-1/2 -translate-y-1/2 text-2xl font-bold">
+    ®
+  </span>
+</div>
 
         {/* NAV LINKS (desktop only) */}
         <div className="col-span-2 lg:col-span-3 hidden md:flex gap-6 lg:gap-10 items-center justify-center text-sm lg:text-xl">
