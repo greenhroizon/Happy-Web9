@@ -51,7 +51,6 @@ export default function Header() {
       <div className="bg-[#dcd8ce] rounded-full flex md:grid md:grid-cols-4 lg:grid-cols-5 items-center shadow-xl">
 
         {/* LOGO */}
-        <div className="flex">
   <Link href="/">
     <Image
       src="/footerImage.png"
@@ -62,11 +61,7 @@ export default function Header() {
     />
   </Link>
 
-  {/* ® symbol */}
-  <span className="text-2xl font-bold">
-    ®
-  </span>
-</div>
+
 
         {/* NAV LINKS (desktop only) */}
         <div className="col-span-2 lg:col-span-3 hidden md:flex gap-6 lg:gap-10 items-center justify-center text-sm lg:text-xl">
