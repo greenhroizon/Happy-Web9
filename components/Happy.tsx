@@ -30,7 +30,7 @@ export default function Happy() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="flex flex-col gap-5 text-white text-left md:text-center md:items-center md:justify-center"
+        className="flex flex-col gap-2 text-white text-left md:text-center md:items-center md:justify-center"
       >
         
         {/* Heading */}
