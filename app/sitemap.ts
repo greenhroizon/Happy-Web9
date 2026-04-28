@@ -3,6 +3,8 @@ import { fetchAllWordPressPostSlugs, SITE_URL } from "@/lib/wordpress";
 
 export const dynamic = "force-dynamic";
 
+
+const staticRoutes = ["", "/AboutUs", "/Programs", "/Corporate", "/Resources", "/Payment"];
 const staticRoutes = ["", "/AboutUs", "/Programs", "/Corporate", "/Resources", "/Payment", "/blog"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -18,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const posts = await fetchAllWordPressPostSlugs();
     articleEntries = posts.map((post) => ({
+      url: `${SITE_URL}/Resources/${post.slug}`,
       url: `${SITE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.modified),
       changeFrequency: "daily",

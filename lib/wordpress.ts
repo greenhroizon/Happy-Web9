@@ -1,3 +1,6 @@
+
+const WORDPRESS_SITES = ["https://happyho.in", "https://www.happyho.in"];
+const WORDPRESS_API_SUFFIX = "/wp-json/wp/v2";
 const WORDPRESS_SITE_URL = "https://happyho.in";
 const WORDPRESS_API_BASE = `${WORDPRESS_SITE_URL}/wp-json/wp/v2`;
 
@@ -21,17 +24,38 @@ export interface WordPressPost {
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://happyho.in";
 
+function decodeNumericEntities(value: string): string {
+  return value
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
+    .replace(/&#x([\da-fA-F]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)));
+}
+
+function decodeHtmlEntities(value: string): string {
+  return decodeNumericEntities(value)
 function decodeHtmlEntities(value: string): string {
   return value
     .replace(/&#038;/g, "&")
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
     .replace(/&#039;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&nbsp;/g, " ")
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .trim();
 }
 
+export function sanitizeWordPressHtml(value: string): string {
+  return decodeNumericEntities(
+    value
+      .replace(/\[(.*?)\]/g, "")
+      .replace(/&#x?[0-9a-fA-F]+;(?=\s|$)/g, "")
+      .trim(),
+  );
+}
+
+export function stripHtml(value: string): string {
+  const withoutTags = sanitizeWordPressHtml(value).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
 export function stripHtml(value: string): string {
   const withoutTags = value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
   return decodeHtmlEntities(withoutTags);
@@ -41,6 +65,34 @@ export function resolvePostImage(post: WordPressPost): string {
   return post.yoast_head_json?.og_image?.[0]?.url ?? "/67.png";
 }
 
+async function fetchFromWordPress<T>(pathWithQuery: string): Promise<T> {
+  let lastError: unknown;
+
+  for (const baseUrl of WORDPRESS_SITES) {
+    try {
+      const response = await fetch(`${baseUrl}${WORDPRESS_API_SUFFIX}${pathWithQuery}`, {
+        next: { revalidate: 300 },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      return (await response.json()) as T;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError instanceof Error ? lastError : new Error("Unable to fetch WordPress content");
+}
+
+export async function fetchWordPressPosts(search?: string, page = 1, perPage = 10): Promise<WordPressPost[]> {
+  const params = new URLSearchParams({
+    per_page: String(perPage),
+    page: String(page),
+    orderby: "date",
+    order: "desc",
 export async function fetchWordPressPosts(search?: string): Promise<WordPressPost[]> {
   const params = new URLSearchParams({
     per_page: "24",
@@ -50,7 +102,7 @@ export async function fetchWordPressPosts(search?: string): Promise<WordPressPos
   if (search && search.trim().length > 0) {
     params.set("search", search.trim());
   }
-
+  return fetchFromWordPress<WordPressPost[]>(`/posts?${params.toString()}`);
   const response = await fetch(`${WORDPRESS_API_BASE}/posts?${params.toString()}`, {
     next: { revalidate: 300 },
   });
@@ -67,7 +119,7 @@ export async function fetchWordPressPostBySlug(slug: string): Promise<WordPressP
     slug,
     _embed: "true",
   });
-
+  const posts = await fetchFromWordPress<WordPressPost[]>(`/posts?${params.toString()}`);
   const response = await fetch(`${WORDPRESS_API_BASE}/posts?${params.toString()}`, {
     next: { revalidate: 300 },
   });
@@ -81,6 +133,9 @@ export async function fetchWordPressPostBySlug(slug: string): Promise<WordPressP
 }
 
 export async function fetchAllWordPressPostSlugs(): Promise<Array<Pick<WordPressPost, "slug" | "modified">>> {
+  return fetchFromWordPress<Array<Pick<WordPressPost, "slug" | "modified">>>(
+    "/posts?per_page=100&orderby=date&order=desc&_fields=slug,modified",
+  );
   const response = await fetch(`${WORDPRESS_API_BASE}/posts?per_page=100&_fields=slug,modified`, {
     next: { revalidate: 300 },
   });

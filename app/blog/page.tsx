@@ -1,3 +1,8 @@
+
+import { redirect } from "next/navigation";
+
+export default function BlogPageRedirect() {
+  redirect("/Resources");
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
