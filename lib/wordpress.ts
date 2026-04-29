@@ -1,8 +1,5 @@
-
 const WORDPRESS_SITES = ["https://happyho.in", "https://www.happyho.in"];
 const WORDPRESS_API_SUFFIX = "/wp-json/wp/v2";
-const WORDPRESS_SITE_URL = "https://happyho.in";
-const WORDPRESS_API_BASE = `${WORDPRESS_SITE_URL}/wp-json/wp/v2`;
 
 export interface WordPressRenderedField {
   rendered: string;
@@ -32,8 +29,6 @@ function decodeNumericEntities(value: string): string {
 
 function decodeHtmlEntities(value: string): string {
   return decodeNumericEntities(value)
-function decodeHtmlEntities(value: string): string {
-  return value
     .replace(/&#038;/g, "&")
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
@@ -49,15 +44,13 @@ export function sanitizeWordPressHtml(value: string): string {
   return decodeNumericEntities(
     value
       .replace(/\[(.*?)\]/g, "")
-      .replace(/&#x?[0-9a-fA-F]+;(?=\s|$)/g, "")
+      .replace(/&#[xX]?[0-9a-fA-F]+;/g, "")
       .trim(),
   );
 }
 
 export function stripHtml(value: string): string {
   const withoutTags = sanitizeWordPressHtml(value).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
-export function stripHtml(value: string): string {
-  const withoutTags = value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
   return decodeHtmlEntities(withoutTags);
 }
 
@@ -93,25 +86,14 @@ export async function fetchWordPressPosts(search?: string, page = 1, perPage = 1
     page: String(page),
     orderby: "date",
     order: "desc",
-export async function fetchWordPressPosts(search?: string): Promise<WordPressPost[]> {
-  const params = new URLSearchParams({
-    per_page: "24",
     _embed: "true",
   });
 
   if (search && search.trim().length > 0) {
     params.set("search", search.trim());
   }
+
   return fetchFromWordPress<WordPressPost[]>(`/posts?${params.toString()}`);
-  const response = await fetch(`${WORDPRESS_API_BASE}/posts?${params.toString()}`, {
-    next: { revalidate: 300 },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch posts (${response.status})`);
-  }
-
-  return (await response.json()) as WordPressPost[];
 }
 
 export async function fetchWordPressPostBySlug(slug: string): Promise<WordPressPost | null> {
@@ -119,16 +101,8 @@ export async function fetchWordPressPostBySlug(slug: string): Promise<WordPressP
     slug,
     _embed: "true",
   });
+
   const posts = await fetchFromWordPress<WordPressPost[]>(`/posts?${params.toString()}`);
-  const response = await fetch(`${WORDPRESS_API_BASE}/posts?${params.toString()}`, {
-    next: { revalidate: 300 },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch post (${response.status})`);
-  }
-
-  const posts = (await response.json()) as WordPressPost[];
   return posts[0] ?? null;
 }
 
@@ -136,13 +110,4 @@ export async function fetchAllWordPressPostSlugs(): Promise<Array<Pick<WordPress
   return fetchFromWordPress<Array<Pick<WordPressPost, "slug" | "modified">>>(
     "/posts?per_page=100&orderby=date&order=desc&_fields=slug,modified",
   );
-  const response = await fetch(`${WORDPRESS_API_BASE}/posts?per_page=100&_fields=slug,modified`, {
-    next: { revalidate: 300 },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch post slugs (${response.status})`);
-  }
-
-  return (await response.json()) as Array<Pick<WordPressPost, "slug" | "modified">>;
 }
