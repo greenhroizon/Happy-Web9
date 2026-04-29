@@ -94,7 +94,7 @@ export default function Header() {
   {opened && (
     <div className="absolute top-full mt-3 bg-white shadow-lg rounded-lg py-2 w-[160px] lg:w-[180px] z-50">
       <Link
-        href="/blog"
+        href="/Resources"
         className="block px-4 py-2 hover:bg-gray-100"
         onClick={() => setOpened(false)}
       >
@@ -183,7 +183,7 @@ className="fixed inset-0 bg-[#dcd8ce] z-40 flex flex-col items-start justify-cen
   {openedsmall && (
     <div className="absolute top-full mt-3 bg-white shadow-lg rounded-lg py-2 w-[160px] lg:w-[180px] z-50">
       <Link
-        href="/blog"
+        href="/Resources"
         className="block px-4 py-2 hover:bg-gray-100 text-sm"
         onClick={() => setOpenedsmall(false)}
       >
