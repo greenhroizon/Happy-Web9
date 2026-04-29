@@ -54,8 +54,30 @@ export function stripHtml(value: string): string {
   return decodeHtmlEntities(withoutTags);
 }
 
+
+function normalizeImageUrl(value?: string): string | null {
+  if (!value) {
+    return null;
+  }
+
+  const cleaned = decodeHtmlEntities(value).replace(/\\/g, "").trim();
+
+  if (!cleaned) {
+    return null;
+  }
+
+  if (cleaned.startsWith("//")) {
+    return `https:${cleaned}`;
+  }
+
+  if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
+    return cleaned;
+  }
+
+  return null;
+}
 export function resolvePostImage(post: WordPressPost): string {
-  return post.yoast_head_json?.og_image?.[0]?.url ?? "/67.png";
+  return normalizeImageUrl(post.yoast_head_json?.og_image?.[0]?.url) ?? "/67.png";
 }
 
 async function fetchFromWordPress<T>(pathWithQuery: string): Promise<T> {
