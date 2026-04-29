@@ -5,6 +5,22 @@ export interface WordPressRenderedField {
   rendered: string;
 }
 
+interface WordPressMediaSize {
+  source_url?: string;
+}
+
+interface WordPressFeaturedMedia {
+  source_url?: string;
+  media_details?: {
+    sizes?: {
+      large?: WordPressMediaSize;
+      medium_large?: WordPressMediaSize;
+      medium?: WordPressMediaSize;
+      thumbnail?: WordPressMediaSize;
+    };
+  };
+}
+
 export interface WordPressPost {
   id: number;
   date: string;
@@ -16,6 +32,9 @@ export interface WordPressPost {
   excerpt: WordPressRenderedField;
   yoast_head_json?: {
     og_image?: Array<{ url: string }>;
+  };
+  _embedded?: {
+    "wp:featuredmedia"?: WordPressFeaturedMedia[];
   };
 }
 
@@ -54,7 +73,6 @@ export function stripHtml(value: string): string {
   return decodeHtmlEntities(withoutTags);
 }
 
-
 function normalizeImageUrl(value?: string): string | null {
   if (!value) {
     return null;
@@ -76,8 +94,18 @@ function normalizeImageUrl(value?: string): string | null {
 
   return null;
 }
+
 export function resolvePostImage(post: WordPressPost): string {
-  return normalizeImageUrl(post.yoast_head_json?.og_image?.[0]?.url) ?? "/67.png";
+  const media = post._embedded?.["wp:featuredmedia"]?.[0];
+
+  const featuredMediaUrl =
+    media?.media_details?.sizes?.large?.source_url ??
+    media?.media_details?.sizes?.medium_large?.source_url ??
+    media?.media_details?.sizes?.medium?.source_url ??
+    media?.source_url ??
+    media?.media_details?.sizes?.thumbnail?.source_url;
+
+  return normalizeImageUrl(featuredMediaUrl) ?? normalizeImageUrl(post.yoast_head_json?.og_image?.[0]?.url) ?? "/67.png";
 }
 
 async function fetchFromWordPress<T>(pathWithQuery: string): Promise<T> {
